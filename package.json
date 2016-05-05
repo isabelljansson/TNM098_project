@@ -1,0 +1,22 @@
+{
+  "name": "tnm098",
+  "version": "1.0.0",
+  "description": "this is a project in the course tnm098",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isabelljansson/TNM098_project.git"
+  },
+  "author": "Isabell Jansson, Ronja Grosz, Jonathan Bosson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isabelljansson/TNM098_project/issues"
+  },
+  "homepage": "https://github.com/isabelljansson/TNM098_project",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
