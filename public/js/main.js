@@ -106,15 +106,11 @@ function draw()
     var g = svg.append("g");
 
     //draw map of office floor
-    var people = g
-         .attr("x",0)
-         .attr("y",0)
-         .attr("transform","translate(0,0)")
-         .append('image')
-         .attr("x",0)
-         .attr("y",0)
+    var img = g.append("svg:image")
          .attr("width",width)
          .attr("height",height)
+         .attr("x",0)
+         .attr("y",0)
          .attr("xlink:href",imageList[currImg*3 + currView]);
 
     //draw point        
@@ -122,8 +118,8 @@ function draw()
 		.enter().append("circle")
 		.attr("d", path)
 		.attr("class", "point")
-        .attr("cx", function(d) { return (d[0]*width/(1.6*maxX) + offsetX); })
-        .attr("cy", function(d) { return (height - (d[1]*height/(1.4*maxY)) + offsetY); })
+        .attr("cx", function(d) { return d[0] + margin.right; })
+        .attr("cy", function(d) { return (d[1] + margin.top); })
         .attr("r", 5);
 };
 
