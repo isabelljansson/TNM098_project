@@ -28,7 +28,10 @@ app.get('/find', function (req, res) {
     //just test to find in db
     general.findOne({'message.PumpPower':'91.3744'}, function(err, item) {
         console.log(item)
+        //send back the item to the client
+        res.send(item)
     });
+
 });
 
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="myApp">
+<html>
 <head>
   <meta charset="utf-8">
 
@@ -20,16 +20,26 @@
             	<!-- <img src="images/floor1.jpg" alt="Plan of Floor 1" width="90%" height="90%"> -->
             </div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
-            	<img src="images/floor2.jpg" alt="Plan of Floor 2" width="90%" height="90%">
+           		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
 
-            	<img src="images/floor3.jpg" alt="Plan of Floor 3" width="90%" height="90%">
+           		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
             </div>
-		</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-	<script src="controllers/main.js"></script>
-	<script src="js/main.js"></script>
+		</div>	
 </body>
 
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/vendor/d3.v3.min.js"></script>
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="js/vendor/topojson.v1.min.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/colorbrewer.js"></script>
+<script src="js/vendor/nouislider.min.js"></script>
+<!-- A beautiful replacement for JavaScript's alert window https://github.com/t4t5/sweetalert -->
+<script src="js/vendor/sweetalert.min.js"></script>
+
+<!-- module js -->
+ <script src="js/main.js"></script>
 
 </html>
