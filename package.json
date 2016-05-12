@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/isabelljansson/TNM098_project",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "mongoose": "^4.4.16"
+    "mongodb": "^2.1.18"
   }
 }
