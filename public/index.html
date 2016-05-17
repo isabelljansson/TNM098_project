@@ -3,16 +3,43 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Use a simple bootstrap for some css tricks -->
+  	<!-- Use a simple bootstrap for some css tricks -->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <title>My app</title>
+  <title>Fear the Hazium</title>
 
 </head>
 <body>
-	<div class="container">
-		<h1>hejsan</h1>
-	</div>
+
+	<div class="container" ng-controller="mainCtrl">
+		<h1>GAStech Offices</h1>
+
+		<div id="center" class="col-md-6" style ="height: 80vh; width: 50vw">
+            <div id ="map" style ="height: 80vh; width: 62vw">
+            	<!-- <img src="images/floor1.jpg" alt="Plan of Floor 1" width="90%" height="90%"> -->
+            </div>
+            <div id ="rest" style ="height: 80vh; width: 62vw">
+           		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
+
+           		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
+            </div>
+		</div>	
 </body>
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/vendor/d3.v3.min.js"></script>
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="js/vendor/topojson.v1.min.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/colorbrewer.js"></script>
+<script src="js/vendor/nouislider.min.js"></script>
+<!-- A beautiful replacement for JavaScript's alert window https://github.com/t4t5/sweetalert -->
+<script src="js/vendor/sweetalert.min.js"></script>
+
+<!-- module js -->
+ <script src="js/main.js"></script>
+
 </html>
