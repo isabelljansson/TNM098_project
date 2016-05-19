@@ -10,12 +10,6 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 
-var points = [];
-    httpGetAsync('/getAllPoints', function(response){
-        for(var i = 0; i < response.length; i++)
-            points.push(response[i]);
-    })
-
 var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
 
 var zoom = d3.behavior.zoom()
@@ -56,7 +50,11 @@ httpGetAsync('/find', function(response){
 })*/
 
 //get all points
-
+var points = [];
+    httpGetAsync('/getAllPoints', function(response){
+        for(var i = 0; i < response.length; i++)
+            points.push(response[i]);
+    })
 
 //Loads geo data
 d3.json("json/proxMobileOut-MC2-clean.json", function (json) {
