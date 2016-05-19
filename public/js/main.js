@@ -7,6 +7,7 @@ d3.json(jsonData, function(json) {
     root.y0 = 0;
 });
 */
+var kmeansArray = [];
 var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
 
 var zoom = d3.behavior.zoom()
@@ -15,7 +16,7 @@ var zoom = d3.behavior.zoom()
 
 var mapDiv = $("#map");
 
-var margin = {top: 20, right: 20, bottom: 20, left: 20},
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
 width = mapDiv.width() - margin.right - margin.left,
 height = mapDiv.height() - margin.top - margin.bottom;
 
@@ -62,8 +63,26 @@ d3.json("json/proxMobileOut-MC2.json", function (json) {
 
 var currImg = 0;
 var currView = 0;
-var offsetX = 160, offsetY = -70;
+var offsetX = 0, offsetY = 0; // depends on imAspect
 var maxX = 189, maxY = 115;
+var imAspect = 1.67;
+
+if (width/height < imAspect) {
+    imW = width;
+    imH = imW/imAspect;
+    offsetY += (height - imH)/2;
+    offsetY += 8*(width/height/imAspect);
+}
+else {
+    imH = height;
+    imW = imH*imAspect;
+    offsetX += -(width - imW)/2;
+    if (width/height < 3.16)
+        offsetY += 3.5*Math.abs(width/height/imAspect - 3.16);
+}
+
+console.log('width', width, 'height', height);
+console.log('mapDiv.width', mapDiv.width(), 'mapDiv.height', mapDiv.height());
 
 var imageList = [
         "images/floor1.jpg",        // 0
@@ -77,14 +96,61 @@ var imageList = [
         "images/proxz_F3.jpg"
     ];
 
-console.log("Index: "  + (currImg*3 + currView));
-console.log(imageList[currImg*3 + currView]);
+
+
+// fuzzy kmeans cluster people to find the people in biggest risk of hazium
+this.cluster = function () {
+    // Filter to only store relevant people in the kmeansArray
+    extent = value;
+    kmeansArray = [];
+    data.forEach(function(d,i) {
+        // if in F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1
+            // if (kmeansArray.find(id) == d.id) // person finns i lista
+                // kmeansArray.findIndex(id).times++;
+                // kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
+        // kmeansArray.pusH(id, tid, haziumkoncentrat.at(time=nu))
+        var k = -1;
+        if (format.parse(d.properties.time) >= value[0] && format.parse(d.properties.time) <= value[1]) {
+            kmeansArray.push(d.properties);
+            k = 1;
+        }
+    });
+
+    // Do the fuzzy clustering
+    //var k = document.getElementById('k').value;
+    var kmeansRes = kmeans(kmeansArray,4);
+    console.log(kmeansRes)
+    
+
+    // Visualize the clusters
+    var p = 0;
+    data.forEach(function(d, i) {
+        if (format.parse(d.time) >= extent[0] && format.parse(d.time) <= extent[1]) {
+            for (j = 0; j < k; j++) {
+                if (kmeansRes[p] == j) {
+                    cc[i] = colors[j];
+                }
+            }
+            p++;
+        }
+    });
+    data.forEach(function(d, i) {
+        if (cc[i] == undefined)
+            cc[i] = "orange";
+    });
+    
+    console.log(cc);
+    d3.selectAll(".point")
+    .style("fill", function(d, i){ return cc[i]; });
+};
+
 
 this.changeFloor = function() {
     if (currImg > 1)
         currImg = 0;
     else
         currImg++;
+    $('#child').remove();
     draw();
 }
 
@@ -93,6 +159,7 @@ this.toggleView = function() {
         currView = 0;
     else
         currView++;
+    $('#child').remove();
     draw();
 }
 
@@ -113,14 +180,17 @@ function draw()
          .attr("y",0)
          .attr("xlink:href",imageList[currImg*3 + currView]);
 
+         // 1,89135255, 1.69
     //draw point        
 	var point = g.selectAll("circle").data(dataset)
 		.enter().append("circle")
 		.attr("d", path)
 		.attr("class", "point")
-        .attr("cx", function(d) { return d[0] + margin.right; })
-        .attr("cy", function(d) { return (d[1] + margin.top); })
+        .attr("cx", function(d) { return ( (d[0]/maxX)*imW  - offsetX); })
+        .attr("cy", function(d) { return (height - (d[1]/maxY)*imH - offsetY); })
         .attr("r", 5);
+
+    $('#floor').append('<legend id="child">' + imageList[currImg*3 + currView] + '</legend>').html;
 };
 
 //Zoom and panning method
