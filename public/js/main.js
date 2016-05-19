@@ -1,18 +1,20 @@
+//Function for calling the  server
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
+            callback(JSON.parse(xmlHttp.responseText));
     }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.open("GET", theUrl, false);
     xmlHttp.send(null);
 }
 
-//to call server to find
-/*httpGetAsync('/find', function(response){
-    console.log('this is the response '+response)
-})*/
+var points = [];
+    httpGetAsync('/getAllPoints', function(response){
+        for(var i = 0; i < response.length; i++)
+            points.push(response[i]);
+    })
 
 var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
 
@@ -45,9 +47,20 @@ var projection = d3.geo.mercator()
 //Creates a new geographic path generator and assing the projection        
 var path = d3.geo.path().projection(projection);
 
+
+
+//to call server to find
+/*
+httpGetAsync('/find', function(response){
+    console.log('this is the response '+response)
+})*/
+
+//get all points
+
+
 //Loads geo data
-d3.json("json/proxMobileOut-MC2.json", function (json) {
-    console.log(json);
+d3.json("json/proxMobileOut-MC2-clean.json", function (json) {
+    //console.log(json);
     //root = json;
     //root.fixed = true;
     //root.x = w / 2;
@@ -124,13 +137,15 @@ function draw()
          .attr("xlink:href",imageList[currImg*3 + currView]);
 
     //draw point        
-	var point = g.selectAll("circle").data(dataset)
-		.enter().append("circle")
-		.attr("d", path)
-		.attr("class", "point")
-        .attr("cx", function(d) { return (d[0]*width/(1.6*maxX) + offsetX); })
-        .attr("cy", function(d) { return (height - (d[1]*height/(1.4*maxY)) + offsetY); })
-        .attr("r", 5);
+    var point = g.selectAll("circle").data(points)
+            .enter().append("circle")
+            .attr("d", path)
+            .attr("class", "point")
+            .attr("cx", function(d) { return (d[0]*width/(1.6*maxX) + offsetX); })
+            .attr("cy", function(d) { return (height - (d[1]*height/(1.4*maxY)) + offsetY); })
+            .attr("r", 2);
+
+    //console.log(points)
 };
 
 //Zoom and panning method

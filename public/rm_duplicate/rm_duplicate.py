@@ -2,7 +2,7 @@
 import json
 import glob
 
-with open('MCBuildingProxSensorData/json/proxMobileOut-MC2.json') as f:
+with open('proxMobileOut-MC2.json') as f:
     data = ''
     for line in f.readlines():
         data += line.strip()
