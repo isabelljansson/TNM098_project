@@ -52,7 +52,7 @@ app.get('/getAllPoints', function (req, res) {
           //console.log(doc[0].message.X)
           for(var i = 0; i < doc.length; i++)
               tmp.push([doc[i].message.X, doc[i].message.Y])
-          console.log(tmp)
+          //console.log(tmp)
           res.send(tmp);
         });
       });
