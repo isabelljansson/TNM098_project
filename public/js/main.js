@@ -8,6 +8,7 @@ d3.json(jsonData, function(json) {
 });
 */
 var kmeansArray = [];
+var cc = [];
 var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
 
 var zoom = d3.behavior.zoom()
@@ -103,26 +104,23 @@ this.cluster = function () {
     // Filter to only store relevant people in the kmeansArray
     extent = value;
     kmeansArray = [];
-    data.forEach(function(d,i) {
-        // if in F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1
+    personData.forEach(function(d,i) {
+        // if in personData.zone F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1 && haziumData.findIndex(time).hazium > 0
             // if (kmeansArray.find(id) == d.id) // person finns i lista
                 // kmeansArray.findIndex(id).times++;
                 // kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
-        // kmeansArray.pusH(id, tid, haziumkoncentrat.at(time=nu))
-        var k = -1;
-        if (format.parse(d.properties.time) >= value[0] && format.parse(d.properties.time) <= value[1]) {
-            kmeansArray.push(d.properties);
-            k = 1;
-        }
+            // else {
+                // kmeansArray.push(id, 1, haziumData.findIndex(time,zone).hazium)
+            // }
     });
 
     // Do the fuzzy clustering
     //var k = document.getElementById('k').value;
-    var kmeansRes = kmeans(kmeansArray,4);
-    console.log(kmeansRes)
+    var kmeansRes = kmeans(kmeansArray, 2);
+    console.log(kmeansRes); // people at risk
     
 
-    // Visualize the clusters
+    // Visualize the people at risk (different clusters) - last known position of id
     var p = 0;
     data.forEach(function(d, i) {
         if (format.parse(d.time) >= extent[0] && format.parse(d.time) <= extent[1]) {
@@ -136,7 +134,7 @@ this.cluster = function () {
     });
     data.forEach(function(d, i) {
         if (cc[i] == undefined)
-            cc[i] = "orange";
+            cc[i] = "black";
     });
     
     console.log(cc);
