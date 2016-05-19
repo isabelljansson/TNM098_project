@@ -44,19 +44,26 @@ var projection = d3.geo.mercator()
 var path = d3.geo.path().projection(projection);
 
 
+var zoneData = [];
+httpGetAsync('/getProxOut', function(response){
+    for(var i = 0; i < response.length; i++)
+            zoneData.push(response[i]);
+});
 
-//to call server to find
-/*
-httpGetAsync('/find', function(response){
-    console.log('this is the response '+response)
-})*/
-
-//get all points
+// data for plotted points
 var points = [];
-    httpGetAsync('/getAllPoints', function(response){
+    httpGetAsync('/getProxMobility', function(response){
         for(var i = 0; i < response.length; i++)
             points.push(response[i]);
-    });
+});
+
+var hazium = [];
+    httpGetAsync('/getHaziumF1Z8', function(response){
+        console.log(response[i]);
+        for(var i = 0; i < response.length; i++)
+            hazium.push(response[i]);
+});
+
 
 var currImg = 0;
 var currView = 0;
@@ -92,19 +99,56 @@ var imageList = [
 
 draw();
 
+console.log(points);
+console.log(zoneData);
+console.log(hazium);
+
+
+//Draws the map and the points
+function draw()
+{
+    d3.select("g").remove();
+    var g = svg.append("g");
+
+    //draw map of office floor
+    var img = g.append("svg:image")
+         .attr("width",width)
+         .attr("height",height)
+         .attr("x",0)
+         .attr("y",0)
+         .attr("xlink:href",imageList[currImg*3 + currView]);
+
+         // 1,89135255, 1.69
+    //draw point        
+    var point = g.selectAll("circle").data(points)
+        .enter().append("circle")
+        .attr("d", path)
+        .attr("class", "point")
+        .attr("cx", function(d) { return ( (d.coordinates[0]/maxX)*imW  - offsetX); })
+        .attr("cy", function(d) { return (height - (d.coordinates[1]/maxY)*imH - offsetY); })
+        .attr("r", 5)
+        .style("opacity", function(d){
+                return (Number(d.floor) == currImg+1) ? 1 : 0.0
+            });
+
+
+    $('#floor').append('<legend id="child">' + imageList[currImg*3 + currView] + '</legend>').html;
+};
+
 // fuzzy kmeans cluster people to find the people in biggest risk of hazium
 this.cluster = function () {
     // Filter to only store relevant people in the kmeansArray
-    extent = value;
     kmeansArray = [];
     personData.forEach(function(d,i) {
-        // if in personData.zone F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1 && haziumData.findIndex(time).hazium > 0
-            // if (kmeansArray.find(id) == d.id) // person finns i lista
-                // kmeansArray.findIndex(id).times++;
-                // kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
-            // else {
-                // kmeansArray.push(id, 1, haziumData.findIndex(time,zone).hazium)
-            // }
+        /*
+         if (zoneData.zone F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1 && haziumData.findIndex(time).hazium > 0
+             if (kmeansArray.find(id) == d.id) // person finns i lista
+                 kmeansArray.findIndex(id).times++;
+                 kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
+             else {
+                 kmeansArray.push(id, 1, haziumData.findIndex(time,zone).hazium)
+             }
+             */
     });
 
     // Do the fuzzy clustering
@@ -135,7 +179,6 @@ this.cluster = function () {
     .style("fill", function(d, i){ return cc[i]; });
 };
 
-
 this.changeFloor = function() {
     if (currImg > 1)
         currImg = 0;
@@ -154,35 +197,6 @@ this.toggleView = function() {
     draw();
 }
 
-
-
-
-//Draws the map and the points
-function draw()
-{
-    d3.select("g").remove();
-    var g = svg.append("g");
-
-    //draw map of office floor
-    var img = g.append("svg:image")
-         .attr("width",width)
-         .attr("height",height)
-         .attr("x",0)
-         .attr("y",0)
-         .attr("xlink:href",imageList[currImg*3 + currView]);
-
-         // 1,89135255, 1.69
-    //draw point        
-	var point = g.selectAll("circle").data(points)
-		.enter().append("circle")
-		.attr("d", path)
-		.attr("class", "point")
-        .attr("cx", function(d) { return ( (d[0]/maxX)*imW  - offsetX); })
-        .attr("cy", function(d) { return (height - (d[1]/maxY)*imH - offsetY); })
-        .attr("r", 5);
-
-    $('#floor').append('<legend id="child">' + imageList[currImg*3 + currView] + '</legend>').html;
-};
 
 //Zoom and panning method
 function move() {
