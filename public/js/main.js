@@ -12,7 +12,9 @@ function httpGetAsync(theUrl, callback)
 
 var kmeansArray = [];
 var cc = [];
-var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
+var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S");
+//"2013-03-01T17:11:10"
+//"2016-05-31T00:10:00"
 
 var zoom = d3.behavior.zoom()
         .scaleExtent([0.5, 8])
@@ -44,6 +46,7 @@ var projection = d3.geo.mercator()
 var path = d3.geo.path().projection(projection);
 
 
+// data for zone clustering
 var zoneData = [];
 httpGetAsync('/getProxOut', function(response){
     for(var i = 0; i < response.length; i++)
@@ -57,12 +60,45 @@ var points = [];
             points.push(response[i]);
 });
 
+
+// Get all hazium data and store it in one variable
 var hazium = [];
-    httpGetAsync('/getHaziumF1Z8', function(response){
-       // console.log(response[i]);
-        for(var i = 0; i < response.length; i++)
-            hazium.push(response[i]);
+var tmpF1Z8 = [];
+var tmpF2Z2 = [];
+var tmpF2Z4 = [];
+var tmpF3Z1 = [];
+
+httpGetAsync('/getHaziumF1Z8', function(response){
+    //console.log(response)
+    for(var i = 0; i < response.length; i++)
+        tmpF1Z8.push({"datetime": format.parse(response[i].datetime), "F1Z8": response[i].F1Z8});
+    //console.log(tmpF1Z8)
 });
+
+httpGetAsync('/getHaziumF2Z2', function(response){
+    //console.log(response);
+    for(var i = 0; i < response.length; i++)
+       tmpF2Z2.push({"datetime": format.parse(response[i].datetime), "F2Z2": response[i].F2Z2});
+    //console.log(tmpF2Z2)
+});
+
+httpGetAsync('/getHaziumF2Z4', function(response){
+    //console.log(response);
+    for(var i = 0; i < response.length; i++)
+        tmpF2Z4.push({"datetime": format.parse(response[i].datetime), "F2Z4": response[i].F2Z4});
+});
+
+httpGetAsync('/getHaziumF3Z1', function(response){
+    //console.log(response);
+    for(var i = 0; i < response.length; i++)
+        tmpF3Z1.push({"datetime": format.parse(response[i].datetime), "F3Z1": response[i].F3Z1});
+});
+
+// something weird with time..
+for (var i = 0; i < tmpF1Z8.length; i++) {
+    hazium.push({"datetime": tmpF1Z8[i].datetime, "F1Z8": tmpF1Z8[i].F1Z8,
+                "F2Z2": tmpF2Z2[i].F2Z2, "F2Z4": tmpF2Z4[i].F2Z4, "F3Z1": tmpF3Z1[i].F3Z1});
+}
 
 var general = [];
     httpGetAsync('/getGeneral', function(response){
@@ -70,7 +106,7 @@ var general = [];
             general.push(response[i]);
 });
 
-console.log(general)
+//console.log(general)
 
 var currImg = 0;
 var currView = 0;
@@ -144,20 +180,42 @@ function draw()
 
 // fuzzy kmeans cluster people to find the people in biggest risk of hazium
 this.cluster = function () {
+    console.log("Enter clustering")
     // Filter to only store relevant people in the kmeansArray
     kmeansArray = [];
-    personData.forEach(function(d,i) {
+    var now;
+    tmpF1Z8.forEach(function(d,i) {
+        
+        if (d.F1Z8 > 0.0) {
+            now = format.parse(d.datetime);
+            console.log(now);
+            // find people in zone at set time - query?
+        }
+
+        if (d.F2Z2 > 0.0)
+
+        if (d.F2Z4 > 0.0)
+
+        if (d.F3Z1 > 0.0)
+
+
+         // haziumData.findIndex(time).hazium > 0
+        // If we're in any of the sensor zones
+        if ( (d.floor == 1 && d.zone == 8) || (d.floor == 2 && (d.zone == 2 || d.zone == 4)) 
+            || (d.floor == 1 && d.zone == 1) ) {
+            //console.log(d)
+        }
         /*
-         if (zoneData.zone F1_Z8A or F2_Z2 or F2_Z4 or F3_Z1 && haziumData.findIndex(time).hazium > 0
              if (kmeansArray.find(id) == d.id) // person finns i lista
                  kmeansArray.findIndex(id).times++;
                  kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
              else {
                  kmeansArray.push(id, 1, haziumData.findIndex(time,zone).hazium)
              }
-             */
+          */   
     });
 
+    /*
     // Do the fuzzy clustering
     //var k = document.getElementById('k').value;
     var kmeansRes = kmeans(kmeansArray, 2);
@@ -184,6 +242,7 @@ this.cluster = function () {
     console.log(cc);
     d3.selectAll(".point")
     .style("fill", function(d, i){ return cc[i]; });
+    */
 };
 
 this.changeFloor = function() {
