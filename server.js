@@ -126,13 +126,13 @@ app.get('/getHaziumF2Z2', function (req, res) {
     var tmp = [];   
     f2z2.find(
       { },
-      { 'message.F_2_Z_2_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1, 'message.F_2_Z_2_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push(doc[i].message.F_2_Z_2_HaziumConcentration);
+              tmp.push({"datetime": doc[i].message.datetime, "F2Z2": doc[i].message.F_2_Z_2_HaziumConcentration});
             res.send(tmp);
         });
       });
@@ -142,13 +142,13 @@ app.get('/getHaziumF2Z4', function (req, res) {
     var tmp = [];
     f2z4.find(
       { },
-      { 'message.F_2_Z_4_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1, 'message.F_2_Z_4_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push(doc[i].message.F_2_Z_4_HaziumConcentration);
+              tmp.push({"datetime": doc[i].message.datetime , "F2Z4": doc[i].message.F_2_Z_4_HaziumConcentration});
           res.send(tmp);
         });
       });
@@ -158,13 +158,13 @@ app.get('/getHaziumF3Z1', function (req, res) {
     var tmp = [];
     f3z1.find(
       { },
-      { 'message.F_3_Z_1_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1, 'message.F_3_Z_1_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push(doc[i].message.F_3_Z_1_HaziumConcentration);
+              tmp.push({ "datetime": doc[i].message.datetime , "F3Z1": doc[i].message.F_3_Z_1_HaziumConcentration});
           res.send(tmp);
         });
       });

@@ -18435,7 +18435,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.473",
-"datetime":"2016-06-0800:00:00"
+"datetime":"2016-06-08T00:00:00"
 },
 "offset":691200.0
 },
@@ -18443,7 +18443,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.441",
-"datetime":"2016-06-0800:05:00"
+"datetime":"2016-06-08T00:05:00"
 },
 "offset":691500.0
 },
@@ -18451,7 +18451,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.415",
-"datetime":"2016-06-0800:10:00"
+"datetime":"2016-06-08T00:10:00"
 },
 "offset":691800.0
 },
@@ -18459,7 +18459,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.386",
-"datetime":"2016-06-0800:15:00"
+"datetime":"2016-06-08T00:15:00"
 },
 "offset":692100.0
 },
@@ -18467,7 +18467,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.358",
-"datetime":"2016-06-0800:20:00"
+"datetime":"2016-06-08T00:20:00"
 },
 "offset":692400.0
 },
@@ -18475,7 +18475,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.330",
-"datetime":"2016-06-0800:25:00"
+"datetime":"2016-06-08T00:25:00"
 },
 "offset":692700.0
 },
@@ -18483,7 +18483,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.302",
-"datetime":"2016-06-0800:30:00"
+"datetime":"2016-06-08T00:30:00"
 },
 "offset":693000.0
 },
@@ -18491,7 +18491,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.275",
-"datetime":"2016-06-0800:35:00"
+"datetime":"2016-06-08T00:35:00"
 },
 "offset":693300.0
 },
@@ -18499,7 +18499,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.248",
-"datetime":"2016-06-0800:40:00"
+"datetime":"2016-06-08T00:40:00"
 },
 "offset":693600.0
 },
@@ -18507,7 +18507,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.221",
-"datetime":"2016-06-0800:45:00"
+"datetime":"2016-06-08T00:45:00"
 },
 "offset":693900.0
 },
@@ -18515,7 +18515,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.196",
-"datetime":"2016-06-0800:50:00"
+"datetime":"2016-06-08T00:50:00"
 },
 "offset":694200.0
 },
@@ -18523,7 +18523,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.170",
-"datetime":"2016-06-0800:55:00"
+"datetime":"2016-06-08T00:55:00"
 },
 "offset":694500.0
 },
@@ -18531,7 +18531,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.145",
-"datetime":"2016-06-0801:00:00"
+"datetime":"2016-06-08T01:00:00"
 },
 "offset":694800.0
 },
@@ -18539,7 +18539,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.121",
-"datetime":"2016-06-0801:05:00"
+"datetime":"2016-06-08T01:05:00"
 },
 "offset":695100.0
 },
@@ -18547,7 +18547,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.097",
-"datetime":"2016-06-0801:10:00"
+"datetime":"2016-06-08T01:10:00"
 },
 "offset":695400.0
 },
@@ -18555,7 +18555,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.077",
-"datetime":"2016-06-0801:15:00"
+"datetime":"2016-06-08T01:15:00"
 },
 "offset":695700.0
 },
@@ -18563,7 +18563,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.055",
-"datetime":"2016-06-0801:20:00"
+"datetime":"2016-06-08T01:20:00"
 },
 "offset":696000.0
 },
@@ -18571,7 +18571,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.033",
-"datetime":"2016-06-0801:25:00"
+"datetime":"2016-06-08T01:25:00"
 },
 "offset":696300.0
 },
@@ -18579,7 +18579,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"1.012",
-"datetime":"2016-06-0801:30:00"
+"datetime":"2016-06-08T01:30:00"
 },
 "offset":696600.0
 },
@@ -18587,7 +18587,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.991",
-"datetime":"2016-06-0801:35:00"
+"datetime":"2016-06-08T01:35:00"
 },
 "offset":696900.0
 },
@@ -18595,7 +18595,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.970",
-"datetime":"2016-06-0801:40:00"
+"datetime":"2016-06-08T01:40:00"
 },
 "offset":697200.0
 },
@@ -18603,7 +18603,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.950",
-"datetime":"2016-06-0801:45:00"
+"datetime":"2016-06-08T01:45:00"
 },
 "offset":697500.0
 },
@@ -18611,7 +18611,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.930",
-"datetime":"2016-06-0801:50:00"
+"datetime":"2016-06-08T01:50:00"
 },
 "offset":697800.0
 },
@@ -18619,7 +18619,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.910",
-"datetime":"2016-06-0801:55:00"
+"datetime":"2016-06-08T01:55:00"
 },
 "offset":698100.0
 },
@@ -18627,7 +18627,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.891",
-"datetime":"2016-06-0802:00:00"
+"datetime":"2016-06-08T02:00:00"
 },
 "offset":698400.0
 },
@@ -18635,7 +18635,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.872",
-"datetime":"2016-06-0802:05:00"
+"datetime":"2016-06-08T02:05:00"
 },
 "offset":698700.0
 },
@@ -18643,7 +18643,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.853",
-"datetime":"2016-06-0802:10:00"
+"datetime":"2016-06-08T02:10:00"
 },
 "offset":699000.0
 },
@@ -18651,7 +18651,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.835",
-"datetime":"2016-06-0802:15:00"
+"datetime":"2016-06-08T02:15:00"
 },
 "offset":699300.0
 },
@@ -18659,7 +18659,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.820",
-"datetime":"2016-06-0802:20:00"
+"datetime":"2016-06-08T02:20:00"
 },
 "offset":699600.0
 },
@@ -18667,7 +18667,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.803",
-"datetime":"2016-06-0802:25:00"
+"datetime":"2016-06-08T02:25:00"
 },
 "offset":699900.0
 },
@@ -18675,7 +18675,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.787",
-"datetime":"2016-06-0802:30:00"
+"datetime":"2016-06-08T02:30:00"
 },
 "offset":700200.0
 },
@@ -18683,7 +18683,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.770",
-"datetime":"2016-06-0802:35:00"
+"datetime":"2016-06-08T02:35:00"
 },
 "offset":700500.0
 },
@@ -18691,7 +18691,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.755",
-"datetime":"2016-06-0802:40:00"
+"datetime":"2016-06-08T02:40:00"
 },
 "offset":700800.0
 },
@@ -18699,7 +18699,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.739",
-"datetime":"2016-06-0802:45:00"
+"datetime":"2016-06-08T02:45:00"
 },
 "offset":701100.0
 },
@@ -18707,7 +18707,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.723",
-"datetime":"2016-06-0802:50:00"
+"datetime":"2016-06-08T02:50:00"
 },
 "offset":701400.0
 },
@@ -18715,7 +18715,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.708",
-"datetime":"2016-06-0802:55:00"
+"datetime":"2016-06-08T02:55:00"
 },
 "offset":701700.0
 },
@@ -18723,7 +18723,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.693",
-"datetime":"2016-06-0803:00:00"
+"datetime":"2016-06-08T03:00:00"
 },
 "offset":702000.0
 },
@@ -18731,7 +18731,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.678",
-"datetime":"2016-06-0803:05:00"
+"datetime":"2016-06-08T03:05:00"
 },
 "offset":702300.0
 },
@@ -18739,7 +18739,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.664",
-"datetime":"2016-06-0803:10:00"
+"datetime":"2016-06-08T03:10:00"
 },
 "offset":702600.0
 },
@@ -18747,7 +18747,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.650",
-"datetime":"2016-06-0803:15:00"
+"datetime":"2016-06-08T03:15:00"
 },
 "offset":702900.0
 },
@@ -18755,7 +18755,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.636",
-"datetime":"2016-06-0803:20:00"
+"datetime":"2016-06-08T03:20:00"
 },
 "offset":703200.0
 },
@@ -18763,7 +18763,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.624",
-"datetime":"2016-06-0803:25:00"
+"datetime":"2016-06-08T03:25:00"
 },
 "offset":703500.0
 },
@@ -18771,7 +18771,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.612",
-"datetime":"2016-06-0803:30:00"
+"datetime":"2016-06-08T03:30:00"
 },
 "offset":703800.0
 },
@@ -18779,7 +18779,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.599",
-"datetime":"2016-06-0803:35:00"
+"datetime":"2016-06-08T03:35:00"
 },
 "offset":704100.0
 },
@@ -18787,7 +18787,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.587",
-"datetime":"2016-06-0803:40:00"
+"datetime":"2016-06-08T03:40:00"
 },
 "offset":704400.0
 },
@@ -18795,7 +18795,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.575",
-"datetime":"2016-06-0803:45:00"
+"datetime":"2016-06-08T03:45:00"
 },
 "offset":704700.0
 },
@@ -18803,7 +18803,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.563",
-"datetime":"2016-06-0803:50:00"
+"datetime":"2016-06-08T03:50:00"
 },
 "offset":705000.0
 },
@@ -18811,7 +18811,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.551",
-"datetime":"2016-06-0803:55:00"
+"datetime":"2016-06-08T03:55:00"
 },
 "offset":705300.0
 },
@@ -18819,7 +18819,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.539",
-"datetime":"2016-06-0804:00:00"
+"datetime":"2016-06-08T04:00:00"
 },
 "offset":705600.0
 },
@@ -18827,7 +18827,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.528",
-"datetime":"2016-06-0804:05:00"
+"datetime":"2016-06-08T04:05:00"
 },
 "offset":705900.0
 },
@@ -18835,7 +18835,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.517",
-"datetime":"2016-06-0804:10:00"
+"datetime":"2016-06-08T04:10:00"
 },
 "offset":706200.0
 },
@@ -18843,7 +18843,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.506",
-"datetime":"2016-06-0804:15:00"
+"datetime":"2016-06-08T04:15:00"
 },
 "offset":706500.0
 },
@@ -18851,7 +18851,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.495",
-"datetime":"2016-06-0804:20:00"
+"datetime":"2016-06-08T04:20:00"
 },
 "offset":706800.0
 },
@@ -18859,7 +18859,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.484",
-"datetime":"2016-06-0804:25:00"
+"datetime":"2016-06-08T04:25:00"
 },
 "offset":707100.0
 },
@@ -18867,7 +18867,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.476",
-"datetime":"2016-06-0804:30:00"
+"datetime":"2016-06-08T04:30:00"
 },
 "offset":707400.0
 },
@@ -18875,7 +18875,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.466",
-"datetime":"2016-06-0804:35:00"
+"datetime":"2016-06-08T04:35:00"
 },
 "offset":707700.0
 },
@@ -18883,7 +18883,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.456",
-"datetime":"2016-06-0804:40:00"
+"datetime":"2016-06-08T04:40:00"
 },
 "offset":708000.0
 },
@@ -18891,7 +18891,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.447",
-"datetime":"2016-06-0804:45:00"
+"datetime":"2016-06-08T04:45:00"
 },
 "offset":708300.0
 },
@@ -18899,7 +18899,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.438",
-"datetime":"2016-06-0804:50:00"
+"datetime":"2016-06-08T04:50:00"
 },
 "offset":708600.0
 },
@@ -18907,7 +18907,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.429",
-"datetime":"2016-06-0804:55:00"
+"datetime":"2016-06-08T04:55:00"
 },
 "offset":708900.0
 },
@@ -18915,7 +18915,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.420",
-"datetime":"2016-06-0805:00:00"
+"datetime":"2016-06-08T05:00:00"
 },
 "offset":709200.0
 },
@@ -18923,7 +18923,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.411",
-"datetime":"2016-06-0805:05:00"
+"datetime":"2016-06-08T05:05:00"
 },
 "offset":709500.0
 },
@@ -18931,7 +18931,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.402",
-"datetime":"2016-06-0805:10:00"
+"datetime":"2016-06-08T05:10:00"
 },
 "offset":709800.0
 },
@@ -18939,7 +18939,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.394",
-"datetime":"2016-06-0805:15:00"
+"datetime":"2016-06-08T05:15:00"
 },
 "offset":710100.0
 },
@@ -18947,7 +18947,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.385",
-"datetime":"2016-06-0805:20:00"
+"datetime":"2016-06-08T05:20:00"
 },
 "offset":710400.0
 },
@@ -18955,7 +18955,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.377",
-"datetime":"2016-06-0805:25:00"
+"datetime":"2016-06-08T05:25:00"
 },
 "offset":710700.0
 },
@@ -18963,7 +18963,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.369",
-"datetime":"2016-06-0805:30:00"
+"datetime":"2016-06-08T05:30:00"
 },
 "offset":711000.0
 },
@@ -18971,7 +18971,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.362",
-"datetime":"2016-06-0805:35:00"
+"datetime":"2016-06-08T05:35:00"
 },
 "offset":711300.0
 },
@@ -18979,7 +18979,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.355",
-"datetime":"2016-06-0805:40:00"
+"datetime":"2016-06-08T05:40:00"
 },
 "offset":711600.0
 },
@@ -18987,7 +18987,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.348",
-"datetime":"2016-06-0805:45:00"
+"datetime":"2016-06-08T05:45:00"
 },
 "offset":711900.0
 },
@@ -18995,7 +18995,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.341",
-"datetime":"2016-06-0805:50:00"
+"datetime":"2016-06-08T05:50:00"
 },
 "offset":712200.0
 },
@@ -19003,7 +19003,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.334",
-"datetime":"2016-06-0805:55:00"
+"datetime":"2016-06-08T05:55:00"
 },
 "offset":712500.0
 },
@@ -19011,7 +19011,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.327",
-"datetime":"2016-06-0806:00:00"
+"datetime":"2016-06-08T06:00:00"
 },
 "offset":712800.0
 },
@@ -19019,7 +19019,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.329",
-"datetime":"2016-06-0806:05:00"
+"datetime":"2016-06-08T06:05:00"
 },
 "offset":713100.0
 },
@@ -19027,7 +19027,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.330",
-"datetime":"2016-06-0806:10:00"
+"datetime":"2016-06-08T06:10:00"
 },
 "offset":713400.0
 },
@@ -19035,7 +19035,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.332",
-"datetime":"2016-06-0806:15:00"
+"datetime":"2016-06-08T06:15:00"
 },
 "offset":713700.0
 },
@@ -19043,7 +19043,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.333",
-"datetime":"2016-06-0806:20:00"
+"datetime":"2016-06-08T06:20:00"
 },
 "offset":714000.0
 },
@@ -19051,7 +19051,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.333",
-"datetime":"2016-06-0806:25:00"
+"datetime":"2016-06-08T06:25:00"
 },
 "offset":714300.0
 },
@@ -19059,7 +19059,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.334",
-"datetime":"2016-06-0806:30:00"
+"datetime":"2016-06-08T06:30:00"
 },
 "offset":714600.0
 },
@@ -19067,7 +19067,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0806:35:00"
+"datetime":"2016-06-08T06:35:00"
 },
 "offset":714900.0
 },
@@ -19075,7 +19075,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0806:40:00"
+"datetime":"2016-06-08T06:40:00"
 },
 "offset":715200.0
 },
@@ -19083,7 +19083,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0806:45:00"
+"datetime":"2016-06-08T06:45:00"
 },
 "offset":715500.0
 },
@@ -19091,7 +19091,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0806:50:00"
+"datetime":"2016-06-08T06:50:00"
 },
 "offset":715800.0
 },
@@ -19099,7 +19099,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0806:55:00"
+"datetime":"2016-06-08T06:55:00"
 },
 "offset":716100.0
 },
@@ -19107,7 +19107,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.335",
-"datetime":"2016-06-0807:00:00"
+"datetime":"2016-06-08T07:00:00"
 },
 "offset":716400.0
 },
@@ -19115,7 +19115,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.330",
-"datetime":"2016-06-0807:05:00"
+"datetime":"2016-06-08T07:05:00"
 },
 "offset":716700.0
 },
@@ -19123,7 +19123,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.328",
-"datetime":"2016-06-0807:10:00"
+"datetime":"2016-06-08T07:10:00"
 },
 "offset":717000.0
 },
@@ -19131,7 +19131,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.327",
-"datetime":"2016-06-0807:15:00"
+"datetime":"2016-06-08T07:15:00"
 },
 "offset":717300.0
 },
@@ -19139,7 +19139,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.325",
-"datetime":"2016-06-0807:20:00"
+"datetime":"2016-06-08T07:20:00"
 },
 "offset":717600.0
 },
@@ -19147,7 +19147,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.323",
-"datetime":"2016-06-0807:25:00"
+"datetime":"2016-06-08T07:25:00"
 },
 "offset":717900.0
 },
@@ -19155,7 +19155,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.321",
-"datetime":"2016-06-0807:30:00"
+"datetime":"2016-06-08T07:30:00"
 },
 "offset":718200.0
 },
@@ -19163,7 +19163,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.319",
-"datetime":"2016-06-0807:35:00"
+"datetime":"2016-06-08T07:35:00"
 },
 "offset":718500.0
 },
@@ -19171,7 +19171,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.317",
-"datetime":"2016-06-0807:40:00"
+"datetime":"2016-06-08T07:40:00"
 },
 "offset":718800.0
 },
@@ -19179,7 +19179,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.315",
-"datetime":"2016-06-0807:45:00"
+"datetime":"2016-06-08T07:45:00"
 },
 "offset":719100.0
 },
@@ -19187,7 +19187,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.313",
-"datetime":"2016-06-0807:50:00"
+"datetime":"2016-06-08T07:50:00"
 },
 "offset":719400.0
 },
@@ -19195,7 +19195,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.311",
-"datetime":"2016-06-0807:55:00"
+"datetime":"2016-06-08T07:55:00"
 },
 "offset":719700.0
 },
@@ -19203,7 +19203,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.310",
-"datetime":"2016-06-0808:00:00"
+"datetime":"2016-06-08T08:00:00"
 },
 "offset":720000.0
 },
@@ -19211,7 +19211,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.308",
-"datetime":"2016-06-0808:05:00"
+"datetime":"2016-06-08T08:05:00"
 },
 "offset":720300.0
 },
@@ -19219,7 +19219,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.306",
-"datetime":"2016-06-0808:10:00"
+"datetime":"2016-06-08T08:10:00"
 },
 "offset":720600.0
 },
@@ -19227,7 +19227,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.304",
-"datetime":"2016-06-0808:15:00"
+"datetime":"2016-06-08T08:15:00"
 },
 "offset":720900.0
 },
@@ -19235,7 +19235,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.302",
-"datetime":"2016-06-0808:20:00"
+"datetime":"2016-06-08T08:20:00"
 },
 "offset":721200.0
 },
@@ -19243,7 +19243,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.301",
-"datetime":"2016-06-0808:25:00"
+"datetime":"2016-06-08T08:25:00"
 },
 "offset":721500.0
 },
@@ -19251,7 +19251,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.299",
-"datetime":"2016-06-0808:30:00"
+"datetime":"2016-06-08T08:30:00"
 },
 "offset":721800.0
 },
@@ -19259,7 +19259,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.297",
-"datetime":"2016-06-0808:35:00"
+"datetime":"2016-06-08T08:35:00"
 },
 "offset":722100.0
 },
@@ -19267,7 +19267,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.295",
-"datetime":"2016-06-0808:40:00"
+"datetime":"2016-06-08T08:40:00"
 },
 "offset":722400.0
 },
@@ -19275,7 +19275,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.294",
-"datetime":"2016-06-0808:45:00"
+"datetime":"2016-06-08T08:45:00"
 },
 "offset":722700.0
 },
@@ -19283,7 +19283,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.292",
-"datetime":"2016-06-0808:50:00"
+"datetime":"2016-06-08T08:50:00"
 },
 "offset":723000.0
 },
@@ -19291,7 +19291,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.290",
-"datetime":"2016-06-0808:55:00"
+"datetime":"2016-06-08T08:55:00"
 },
 "offset":723300.0
 },
@@ -19299,7 +19299,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.289",
-"datetime":"2016-06-0809:00:00"
+"datetime":"2016-06-08T09:00:00"
 },
 "offset":723600.0
 },
@@ -19307,7 +19307,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.287",
-"datetime":"2016-06-0809:05:00"
+"datetime":"2016-06-08T09:05:00"
 },
 "offset":723900.0
 },
@@ -19315,7 +19315,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.285",
-"datetime":"2016-06-0809:10:00"
+"datetime":"2016-06-08T09:10:00"
 },
 "offset":724200.0
 },
@@ -19323,7 +19323,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.284",
-"datetime":"2016-06-0809:15:00"
+"datetime":"2016-06-08T09:15:00"
 },
 "offset":724500.0
 },
@@ -19331,7 +19331,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.282",
-"datetime":"2016-06-0809:20:00"
+"datetime":"2016-06-08T09:20:00"
 },
 "offset":724800.0
 },
@@ -19339,7 +19339,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.281",
-"datetime":"2016-06-0809:25:00"
+"datetime":"2016-06-08T09:25:00"
 },
 "offset":725100.0
 },
@@ -19347,7 +19347,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.279",
-"datetime":"2016-06-0809:30:00"
+"datetime":"2016-06-08T09:30:00"
 },
 "offset":725400.0
 },
@@ -19355,7 +19355,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.277",
-"datetime":"2016-06-0809:35:00"
+"datetime":"2016-06-08T09:35:00"
 },
 "offset":725700.0
 },
@@ -19363,7 +19363,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.276",
-"datetime":"2016-06-0809:40:00"
+"datetime":"2016-06-08T09:40:00"
 },
 "offset":726000.0
 },
@@ -19371,7 +19371,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.274",
-"datetime":"2016-06-0809:45:00"
+"datetime":"2016-06-08T09:45:00"
 },
 "offset":726300.0
 },
@@ -19379,7 +19379,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.273",
-"datetime":"2016-06-0809:50:00"
+"datetime":"2016-06-08T09:50:00"
 },
 "offset":726600.0
 },
@@ -19387,7 +19387,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.271",
-"datetime":"2016-06-0809:55:00"
+"datetime":"2016-06-08T09:55:00"
 },
 "offset":726900.0
 },
@@ -19395,7 +19395,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.270",
-"datetime":"2016-06-0810:00:00"
+"datetime":"2016-06-08T10:00:00"
 },
 "offset":727200.0
 },
@@ -19403,7 +19403,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.268",
-"datetime":"2016-06-0810:05:00"
+"datetime":"2016-06-08T10:05:00"
 },
 "offset":727500.0
 },
@@ -19411,7 +19411,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.267",
-"datetime":"2016-06-0810:10:00"
+"datetime":"2016-06-08T10:10:00"
 },
 "offset":727800.0
 },
@@ -19419,7 +19419,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.266",
-"datetime":"2016-06-0810:15:00"
+"datetime":"2016-06-08T10:15:00"
 },
 "offset":728100.0
 },
@@ -19427,7 +19427,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.264",
-"datetime":"2016-06-0810:20:00"
+"datetime":"2016-06-08T10:20:00"
 },
 "offset":728400.0
 },
@@ -19435,7 +19435,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.263",
-"datetime":"2016-06-0810:25:00"
+"datetime":"2016-06-08T10:25:00"
 },
 "offset":728700.0
 },
@@ -19443,7 +19443,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.261",
-"datetime":"2016-06-0810:30:00"
+"datetime":"2016-06-08T10:30:00"
 },
 "offset":729000.0
 },
@@ -19451,7 +19451,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.260",
-"datetime":"2016-06-0810:35:00"
+"datetime":"2016-06-08T10:35:00"
 },
 "offset":729300.0
 },
@@ -19459,7 +19459,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.259",
-"datetime":"2016-06-0810:40:00"
+"datetime":"2016-06-08T10:40:00"
 },
 "offset":729600.0
 },
@@ -19467,7 +19467,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.257",
-"datetime":"2016-06-0810:45:00"
+"datetime":"2016-06-08T10:45:00"
 },
 "offset":729900.0
 },
@@ -19475,7 +19475,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.256",
-"datetime":"2016-06-0810:50:00"
+"datetime":"2016-06-08T10:50:00"
 },
 "offset":730200.0
 },
@@ -19483,7 +19483,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.255",
-"datetime":"2016-06-0810:55:00"
+"datetime":"2016-06-08T10:55:00"
 },
 "offset":730500.0
 },
@@ -19491,7 +19491,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.253",
-"datetime":"2016-06-0811:00:00"
+"datetime":"2016-06-08T11:00:00"
 },
 "offset":730800.0
 },
@@ -19499,7 +19499,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.252",
-"datetime":"2016-06-0811:05:00"
+"datetime":"2016-06-08T11:05:00"
 },
 "offset":731100.0
 },
@@ -19507,7 +19507,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.251",
-"datetime":"2016-06-0811:10:00"
+"datetime":"2016-06-08T11:10:00"
 },
 "offset":731400.0
 },
@@ -19515,7 +19515,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.249",
-"datetime":"2016-06-0811:15:00"
+"datetime":"2016-06-08T11:15:00"
 },
 "offset":731700.0
 },
@@ -19523,7 +19523,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.248",
-"datetime":"2016-06-0811:20:00"
+"datetime":"2016-06-08T11:20:00"
 },
 "offset":732000.0
 },
@@ -19531,7 +19531,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.247",
-"datetime":"2016-06-0811:25:00"
+"datetime":"2016-06-08T11:25:00"
 },
 "offset":732300.0
 },
@@ -19539,7 +19539,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.246",
-"datetime":"2016-06-0811:30:00"
+"datetime":"2016-06-08T11:30:00"
 },
 "offset":732600.0
 },
@@ -19547,7 +19547,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.244",
-"datetime":"2016-06-0811:35:00"
+"datetime":"2016-06-08T11:35:00"
 },
 "offset":732900.0
 },
@@ -19555,7 +19555,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.243",
-"datetime":"2016-06-0811:40:00"
+"datetime":"2016-06-08T11:40:00"
 },
 "offset":733200.0
 },
@@ -19563,7 +19563,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.242",
-"datetime":"2016-06-0811:45:00"
+"datetime":"2016-06-08T11:45:00"
 },
 "offset":733500.0
 },
@@ -19571,7 +19571,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.241",
-"datetime":"2016-06-0811:50:00"
+"datetime":"2016-06-08T11:50:00"
 },
 "offset":733800.0
 },
@@ -19579,7 +19579,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.239",
-"datetime":"2016-06-0811:55:00"
+"datetime":"2016-06-08T11:55:00"
 },
 "offset":734100.0
 },
@@ -19587,7 +19587,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.238",
-"datetime":"2016-06-0812:00:00"
+"datetime":"2016-06-08T12:00:00"
 },
 "offset":734400.0
 },
@@ -19595,7 +19595,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.237",
-"datetime":"2016-06-0812:05:00"
+"datetime":"2016-06-08T12:05:00"
 },
 "offset":734700.0
 },
@@ -19603,7 +19603,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.236",
-"datetime":"2016-06-0812:10:00"
+"datetime":"2016-06-08T12:10:00"
 },
 "offset":735000.0
 },
@@ -19611,7 +19611,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.235",
-"datetime":"2016-06-0812:15:00"
+"datetime":"2016-06-08T12:15:00"
 },
 "offset":735300.0
 },
@@ -19619,7 +19619,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.234",
-"datetime":"2016-06-0812:20:00"
+"datetime":"2016-06-08T12:20:00"
 },
 "offset":735600.0
 },
@@ -19627,7 +19627,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.232",
-"datetime":"2016-06-0812:25:00"
+"datetime":"2016-06-08T12:25:00"
 },
 "offset":735900.0
 },
@@ -19635,7 +19635,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.231",
-"datetime":"2016-06-0812:30:00"
+"datetime":"2016-06-08T12:30:00"
 },
 "offset":736200.0
 },
@@ -19643,7 +19643,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.230",
-"datetime":"2016-06-0812:35:00"
+"datetime":"2016-06-08T12:35:00"
 },
 "offset":736500.0
 },
@@ -19651,7 +19651,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.229",
-"datetime":"2016-06-0812:40:00"
+"datetime":"2016-06-08T12:40:00"
 },
 "offset":736800.0
 },
@@ -19659,7 +19659,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.228",
-"datetime":"2016-06-0812:45:00"
+"datetime":"2016-06-08T12:45:00"
 },
 "offset":737100.0
 },
@@ -19667,7 +19667,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.227",
-"datetime":"2016-06-0812:50:00"
+"datetime":"2016-06-08T12:50:00"
 },
 "offset":737400.0
 },
@@ -19675,7 +19675,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.226",
-"datetime":"2016-06-0812:55:00"
+"datetime":"2016-06-08T12:55:00"
 },
 "offset":737700.0
 },
@@ -19683,7 +19683,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.225",
-"datetime":"2016-06-0813:00:00"
+"datetime":"2016-06-08T13:00:00"
 },
 "offset":738000.0
 },
@@ -19691,7 +19691,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.224",
-"datetime":"2016-06-0813:05:00"
+"datetime":"2016-06-08T13:05:00"
 },
 "offset":738300.0
 },
@@ -19699,7 +19699,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.223",
-"datetime":"2016-06-0813:10:00"
+"datetime":"2016-06-08T13:10:00"
 },
 "offset":738600.0
 },
@@ -19707,7 +19707,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.221",
-"datetime":"2016-06-0813:15:00"
+"datetime":"2016-06-08T13:15:00"
 },
 "offset":738900.0
 },
@@ -19715,7 +19715,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.220",
-"datetime":"2016-06-0813:20:00"
+"datetime":"2016-06-08T13:20:00"
 },
 "offset":739200.0
 },
@@ -19723,7 +19723,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.219",
-"datetime":"2016-06-0813:25:00"
+"datetime":"2016-06-08T13:25:00"
 },
 "offset":739500.0
 },
@@ -19731,7 +19731,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.218",
-"datetime":"2016-06-0813:30:00"
+"datetime":"2016-06-08T13:30:00"
 },
 "offset":739800.0
 },
@@ -19739,7 +19739,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.217",
-"datetime":"2016-06-0813:35:00"
+"datetime":"2016-06-08T13:35:00"
 },
 "offset":740100.0
 },
@@ -19747,7 +19747,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.216",
-"datetime":"2016-06-0813:40:00"
+"datetime":"2016-06-08T13:40:00"
 },
 "offset":740400.0
 },
@@ -19755,7 +19755,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.215",
-"datetime":"2016-06-0813:45:00"
+"datetime":"2016-06-08T13:45:00"
 },
 "offset":740700.0
 },
@@ -19763,7 +19763,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.214",
-"datetime":"2016-06-0813:50:00"
+"datetime":"2016-06-08T13:50:00"
 },
 "offset":741000.0
 },
@@ -19771,7 +19771,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.213",
-"datetime":"2016-06-0813:55:00"
+"datetime":"2016-06-08T13:55:00"
 },
 "offset":741300.0
 },
@@ -19779,7 +19779,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.212",
-"datetime":"2016-06-0814:00:00"
+"datetime":"2016-06-08T14:00:00"
 },
 "offset":741600.0
 },
@@ -19787,7 +19787,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.211",
-"datetime":"2016-06-0814:05:00"
+"datetime":"2016-06-08T14:05:00"
 },
 "offset":741900.0
 },
@@ -19795,7 +19795,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.210",
-"datetime":"2016-06-0814:10:00"
+"datetime":"2016-06-08T14:10:00"
 },
 "offset":742200.0
 },
@@ -19803,7 +19803,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.209",
-"datetime":"2016-06-0814:15:00"
+"datetime":"2016-06-08T14:15:00"
 },
 "offset":742500.0
 },
@@ -19811,7 +19811,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.209",
-"datetime":"2016-06-0814:20:00"
+"datetime":"2016-06-08T14:20:00"
 },
 "offset":742800.0
 },
@@ -19819,7 +19819,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.208",
-"datetime":"2016-06-0814:25:00"
+"datetime":"2016-06-08T14:25:00"
 },
 "offset":743100.0
 },
@@ -19827,7 +19827,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.207",
-"datetime":"2016-06-0814:30:00"
+"datetime":"2016-06-08T14:30:00"
 },
 "offset":743400.0
 },
@@ -19835,7 +19835,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.206",
-"datetime":"2016-06-0814:35:00"
+"datetime":"2016-06-08T14:35:00"
 },
 "offset":743700.0
 },
@@ -19843,7 +19843,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.205",
-"datetime":"2016-06-0814:40:00"
+"datetime":"2016-06-08T14:40:00"
 },
 "offset":744000.0
 },
@@ -19851,7 +19851,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.204",
-"datetime":"2016-06-0814:45:00"
+"datetime":"2016-06-08T14:45:00"
 },
 "offset":744300.0
 },
@@ -19859,7 +19859,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.203",
-"datetime":"2016-06-0814:50:00"
+"datetime":"2016-06-08T14:50:00"
 },
 "offset":744600.0
 },
@@ -19867,7 +19867,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.202",
-"datetime":"2016-06-0814:55:00"
+"datetime":"2016-06-08T14:55:00"
 },
 "offset":744900.0
 },
@@ -19875,7 +19875,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.201",
-"datetime":"2016-06-0815:00:00"
+"datetime":"2016-06-08T15:00:00"
 },
 "offset":745200.0
 },
@@ -19883,7 +19883,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.200",
-"datetime":"2016-06-0815:05:00"
+"datetime":"2016-06-08T15:05:00"
 },
 "offset":745500.0
 },
@@ -19891,7 +19891,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.200",
-"datetime":"2016-06-0815:10:00"
+"datetime":"2016-06-08T15:10:00"
 },
 "offset":745800.0
 },
@@ -19899,7 +19899,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.199",
-"datetime":"2016-06-0815:15:00"
+"datetime":"2016-06-08T15:15:00"
 },
 "offset":746100.0
 },
@@ -19907,7 +19907,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.198",
-"datetime":"2016-06-0815:20:00"
+"datetime":"2016-06-08T15:20:00"
 },
 "offset":746400.0
 },
@@ -19915,7 +19915,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.197",
-"datetime":"2016-06-0815:25:00"
+"datetime":"2016-06-08T15:25:00"
 },
 "offset":746700.0
 },
@@ -19923,7 +19923,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.196",
-"datetime":"2016-06-0815:30:00"
+"datetime":"2016-06-08T15:30:00"
 },
 "offset":747000.0
 },
@@ -19931,7 +19931,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.195",
-"datetime":"2016-06-0815:35:00"
+"datetime":"2016-06-08T15:35:00"
 },
 "offset":747300.0
 },
@@ -19939,7 +19939,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.194",
-"datetime":"2016-06-0815:40:00"
+"datetime":"2016-06-08T15:40:00"
 },
 "offset":747600.0
 },
@@ -19947,7 +19947,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.193",
-"datetime":"2016-06-0815:45:00"
+"datetime":"2016-06-08T15:45:00"
 },
 "offset":747900.0
 },
@@ -19955,7 +19955,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.193",
-"datetime":"2016-06-0815:50:00"
+"datetime":"2016-06-08T15:50:00"
 },
 "offset":748200.0
 },
@@ -19963,7 +19963,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.192",
-"datetime":"2016-06-0815:55:00"
+"datetime":"2016-06-08T15:55:00"
 },
 "offset":748500.0
 },
@@ -19971,7 +19971,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.191",
-"datetime":"2016-06-0816:00:00"
+"datetime":"2016-06-08T16:00:00"
 },
 "offset":748800.0
 },
@@ -19979,7 +19979,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.190",
-"datetime":"2016-06-0816:05:00"
+"datetime":"2016-06-08T16:05:00"
 },
 "offset":749100.0
 },
@@ -19987,7 +19987,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.189",
-"datetime":"2016-06-0816:10:00"
+"datetime":"2016-06-08T16:10:00"
 },
 "offset":749400.0
 },
@@ -19995,7 +19995,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.188",
-"datetime":"2016-06-0816:15:00"
+"datetime":"2016-06-08T16:15:00"
 },
 "offset":749700.0
 },
@@ -20003,7 +20003,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.187",
-"datetime":"2016-06-0816:20:00"
+"datetime":"2016-06-08T16:20:00"
 },
 "offset":750000.0
 },
@@ -20011,7 +20011,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.186",
-"datetime":"2016-06-0816:25:00"
+"datetime":"2016-06-08T16:25:00"
 },
 "offset":750300.0
 },
@@ -20019,7 +20019,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.186",
-"datetime":"2016-06-0816:30:00"
+"datetime":"2016-06-08T16:30:00"
 },
 "offset":750600.0
 },
@@ -20027,7 +20027,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.185",
-"datetime":"2016-06-0816:35:00"
+"datetime":"2016-06-08T16:35:00"
 },
 "offset":750900.0
 },
@@ -20035,7 +20035,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.184",
-"datetime":"2016-06-0816:40:00"
+"datetime":"2016-06-08T16:40:00"
 },
 "offset":751200.0
 },
@@ -20043,7 +20043,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.183",
-"datetime":"2016-06-0816:45:00"
+"datetime":"2016-06-08T16:45:00"
 },
 "offset":751500.0
 },
@@ -20051,7 +20051,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.182",
-"datetime":"2016-06-0816:50:00"
+"datetime":"2016-06-08T16:50:00"
 },
 "offset":751800.0
 },
@@ -20059,7 +20059,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.181",
-"datetime":"2016-06-0816:55:00"
+"datetime":"2016-06-08T16:55:00"
 },
 "offset":752100.0
 },
@@ -20067,7 +20067,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.180",
-"datetime":"2016-06-0817:00:00"
+"datetime":"2016-06-08T17:00:00"
 },
 "offset":752400.0
 },
@@ -20075,7 +20075,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.179",
-"datetime":"2016-06-0817:05:00"
+"datetime":"2016-06-08T17:05:00"
 },
 "offset":752700.0
 },
@@ -20083,7 +20083,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.178",
-"datetime":"2016-06-0817:10:00"
+"datetime":"2016-06-08T17:10:00"
 },
 "offset":753000.0
 },
@@ -20091,7 +20091,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.177",
-"datetime":"2016-06-0817:15:00"
+"datetime":"2016-06-08T17:15:00"
 },
 "offset":753300.0
 },
@@ -20099,7 +20099,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.176",
-"datetime":"2016-06-0817:20:00"
+"datetime":"2016-06-08T17:20:00"
 },
 "offset":753600.0
 },
@@ -20107,7 +20107,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.175",
-"datetime":"2016-06-0817:25:00"
+"datetime":"2016-06-08T17:25:00"
 },
 "offset":753900.0
 },
@@ -20115,7 +20115,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.175",
-"datetime":"2016-06-0817:30:00"
+"datetime":"2016-06-08T17:30:00"
 },
 "offset":754200.0
 },
@@ -20123,7 +20123,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.174",
-"datetime":"2016-06-0817:35:00"
+"datetime":"2016-06-08T17:35:00"
 },
 "offset":754500.0
 },
@@ -20131,7 +20131,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.173",
-"datetime":"2016-06-0817:40:00"
+"datetime":"2016-06-08T17:40:00"
 },
 "offset":754800.0
 },
@@ -20139,7 +20139,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.172",
-"datetime":"2016-06-0817:45:00"
+"datetime":"2016-06-08T17:45:00"
 },
 "offset":755100.0
 },
@@ -20147,7 +20147,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.171",
-"datetime":"2016-06-0817:50:00"
+"datetime":"2016-06-08T17:50:00"
 },
 "offset":755400.0
 },
@@ -20155,7 +20155,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.170",
-"datetime":"2016-06-0817:55:00"
+"datetime":"2016-06-08T17:55:00"
 },
 "offset":755700.0
 },
@@ -20163,7 +20163,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.170",
-"datetime":"2016-06-0818:00:00"
+"datetime":"2016-06-08T18:00:00"
 },
 "offset":756000.0
 },
@@ -20171,7 +20171,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.169",
-"datetime":"2016-06-0818:05:00"
+"datetime":"2016-06-08T18:05:00"
 },
 "offset":756300.0
 },
@@ -20179,7 +20179,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.168",
-"datetime":"2016-06-0818:10:00"
+"datetime":"2016-06-08T18:10:00"
 },
 "offset":756600.0
 },
@@ -20187,7 +20187,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.167",
-"datetime":"2016-06-0818:15:00"
+"datetime":"2016-06-08T18:15:00"
 },
 "offset":756900.0
 },
@@ -20195,7 +20195,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.166",
-"datetime":"2016-06-0818:20:00"
+"datetime":"2016-06-08T18:20:00"
 },
 "offset":757200.0
 },
@@ -20203,7 +20203,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.165",
-"datetime":"2016-06-0818:25:00"
+"datetime":"2016-06-08T18:25:00"
 },
 "offset":757500.0
 },
@@ -20211,7 +20211,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.165",
-"datetime":"2016-06-0818:30:00"
+"datetime":"2016-06-08T18:30:00"
 },
 "offset":757800.0
 },
@@ -20219,7 +20219,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.164",
-"datetime":"2016-06-0818:35:00"
+"datetime":"2016-06-08T18:35:00"
 },
 "offset":758100.0
 },
@@ -20227,7 +20227,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.163",
-"datetime":"2016-06-0818:40:00"
+"datetime":"2016-06-08T18:40:00"
 },
 "offset":758400.0
 },
@@ -20235,7 +20235,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.162",
-"datetime":"2016-06-0818:45:00"
+"datetime":"2016-06-08T18:45:00"
 },
 "offset":758700.0
 },
@@ -20243,7 +20243,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.161",
-"datetime":"2016-06-0818:50:00"
+"datetime":"2016-06-08T18:50:00"
 },
 "offset":759000.0
 },
@@ -20251,7 +20251,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.160",
-"datetime":"2016-06-0818:55:00"
+"datetime":"2016-06-08T18:55:00"
 },
 "offset":759300.0
 },
@@ -20259,7 +20259,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.160",
-"datetime":"2016-06-0819:00:00"
+"datetime":"2016-06-08T19:00:00"
 },
 "offset":759600.0
 },
@@ -20267,7 +20267,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.159",
-"datetime":"2016-06-0819:05:00"
+"datetime":"2016-06-08T19:05:00"
 },
 "offset":759900.0
 },
@@ -20275,7 +20275,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.158",
-"datetime":"2016-06-0819:10:00"
+"datetime":"2016-06-08T19:10:00"
 },
 "offset":760200.0
 },
@@ -20283,7 +20283,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.157",
-"datetime":"2016-06-0819:15:00"
+"datetime":"2016-06-08T19:15:00"
 },
 "offset":760500.0
 },
@@ -20291,7 +20291,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.157",
-"datetime":"2016-06-0819:20:00"
+"datetime":"2016-06-08T19:20:00"
 },
 "offset":760800.0
 },
@@ -20299,7 +20299,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.156",
-"datetime":"2016-06-0819:25:00"
+"datetime":"2016-06-08T19:25:00"
 },
 "offset":761100.0
 },
@@ -20307,7 +20307,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.155",
-"datetime":"2016-06-0819:30:00"
+"datetime":"2016-06-08T19:30:00"
 },
 "offset":761400.0
 },
@@ -20315,7 +20315,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.154",
-"datetime":"2016-06-0819:35:00"
+"datetime":"2016-06-08T19:35:00"
 },
 "offset":761700.0
 },
@@ -20323,7 +20323,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.154",
-"datetime":"2016-06-0819:40:00"
+"datetime":"2016-06-08T19:40:00"
 },
 "offset":762000.0
 },
@@ -20331,7 +20331,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.153",
-"datetime":"2016-06-0819:45:00"
+"datetime":"2016-06-08T19:45:00"
 },
 "offset":762300.0
 },
@@ -20339,7 +20339,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.152",
-"datetime":"2016-06-0819:50:00"
+"datetime":"2016-06-08T19:50:00"
 },
 "offset":762600.0
 },
@@ -20347,7 +20347,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.152",
-"datetime":"2016-06-0819:55:00"
+"datetime":"2016-06-08T19:55:00"
 },
 "offset":762900.0
 },
@@ -20355,7 +20355,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.151",
-"datetime":"2016-06-0820:00:00"
+"datetime":"2016-06-08T20:00:00"
 },
 "offset":763200.0
 },
@@ -20363,7 +20363,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.150",
-"datetime":"2016-06-0820:05:00"
+"datetime":"2016-06-08T20:05:00"
 },
 "offset":763500.0
 },
@@ -20371,7 +20371,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.149",
-"datetime":"2016-06-0820:10:00"
+"datetime":"2016-06-08T20:10:00"
 },
 "offset":763800.0
 },
@@ -20379,7 +20379,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.149",
-"datetime":"2016-06-0820:15:00"
+"datetime":"2016-06-08T20:15:00"
 },
 "offset":764100.0
 },
@@ -20387,7 +20387,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.148",
-"datetime":"2016-06-0820:20:00"
+"datetime":"2016-06-08T20:20:00"
 },
 "offset":764400.0
 },
@@ -20395,7 +20395,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.147",
-"datetime":"2016-06-0820:25:00"
+"datetime":"2016-06-08T20:25:00"
 },
 "offset":764700.0
 },
@@ -20403,7 +20403,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.147",
-"datetime":"2016-06-0820:30:00"
+"datetime":"2016-06-08T20:30:00"
 },
 "offset":765000.0
 },
@@ -20411,7 +20411,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.146",
-"datetime":"2016-06-0820:35:00"
+"datetime":"2016-06-08T20:35:00"
 },
 "offset":765300.0
 },
@@ -20419,7 +20419,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.145",
-"datetime":"2016-06-0820:40:00"
+"datetime":"2016-06-08T20:40:00"
 },
 "offset":765600.0
 },
@@ -20427,7 +20427,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.145",
-"datetime":"2016-06-0820:45:00"
+"datetime":"2016-06-08T20:45:00"
 },
 "offset":765900.0
 },
@@ -20435,7 +20435,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.144",
-"datetime":"2016-06-0820:50:00"
+"datetime":"2016-06-08T20:50:00"
 },
 "offset":766200.0
 },
@@ -20443,7 +20443,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.143",
-"datetime":"2016-06-0820:55:00"
+"datetime":"2016-06-08T20:55:00"
 },
 "offset":766500.0
 },
@@ -20451,7 +20451,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.143",
-"datetime":"2016-06-0821:00:00"
+"datetime":"2016-06-08T21:00:00"
 },
 "offset":766800.0
 },
@@ -20459,7 +20459,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.142",
-"datetime":"2016-06-0821:05:00"
+"datetime":"2016-06-08T21:05:00"
 },
 "offset":767100.0
 },
@@ -20467,7 +20467,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.141",
-"datetime":"2016-06-0821:10:00"
+"datetime":"2016-06-08T21:10:00"
 },
 "offset":767400.0
 },
@@ -20475,7 +20475,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.141",
-"datetime":"2016-06-0821:15:00"
+"datetime":"2016-06-08T21:15:00"
 },
 "offset":767700.0
 },
@@ -20483,7 +20483,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.140",
-"datetime":"2016-06-0821:20:00"
+"datetime":"2016-06-08T21:20:00"
 },
 "offset":768000.0
 },
@@ -20491,7 +20491,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.140",
-"datetime":"2016-06-0821:25:00"
+"datetime":"2016-06-08T21:25:00"
 },
 "offset":768300.0
 },
@@ -20499,7 +20499,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.139",
-"datetime":"2016-06-0821:30:00"
+"datetime":"2016-06-08T21:30:00"
 },
 "offset":768600.0
 },
@@ -20507,7 +20507,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.138",
-"datetime":"2016-06-0821:35:00"
+"datetime":"2016-06-08T21:35:00"
 },
 "offset":768900.0
 },
@@ -20515,7 +20515,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.138",
-"datetime":"2016-06-0821:40:00"
+"datetime":"2016-06-08T21:40:00"
 },
 "offset":769200.0
 },
@@ -20523,7 +20523,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.137",
-"datetime":"2016-06-0821:45:00"
+"datetime":"2016-06-08T21:45:00"
 },
 "offset":769500.0
 },
@@ -20531,7 +20531,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.137",
-"datetime":"2016-06-0821:50:00"
+"datetime":"2016-06-08T21:50:00"
 },
 "offset":769800.0
 },
@@ -20539,7 +20539,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.136",
-"datetime":"2016-06-0821:55:00"
+"datetime":"2016-06-08T21:55:00"
 },
 "offset":770100.0
 },
@@ -20547,7 +20547,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.136",
-"datetime":"2016-06-0822:00:00"
+"datetime":"2016-06-08T22:00:00"
 },
 "offset":770400.0
 },
@@ -20555,7 +20555,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.134",
-"datetime":"2016-06-0822:05:00"
+"datetime":"2016-06-08T22:05:00"
 },
 "offset":770700.0
 },
@@ -20563,7 +20563,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.132",
-"datetime":"2016-06-0822:10:00"
+"datetime":"2016-06-08T22:10:00"
 },
 "offset":771000.0
 },
@@ -20571,7 +20571,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.129",
-"datetime":"2016-06-0822:15:00"
+"datetime":"2016-06-08T22:15:00"
 },
 "offset":771300.0
 },
@@ -20579,7 +20579,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.127",
-"datetime":"2016-06-0822:20:00"
+"datetime":"2016-06-08T22:20:00"
 },
 "offset":771600.0
 },
@@ -20587,7 +20587,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.125",
-"datetime":"2016-06-0822:25:00"
+"datetime":"2016-06-08T22:25:00"
 },
 "offset":771900.0
 },
@@ -20595,7 +20595,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.123",
-"datetime":"2016-06-0822:30:00"
+"datetime":"2016-06-08T22:30:00"
 },
 "offset":772200.0
 },
@@ -20603,7 +20603,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.121",
-"datetime":"2016-06-0822:35:00"
+"datetime":"2016-06-08T22:35:00"
 },
 "offset":772500.0
 },
@@ -20611,7 +20611,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.118",
-"datetime":"2016-06-0822:40:00"
+"datetime":"2016-06-08T22:40:00"
 },
 "offset":772800.0
 },
@@ -20619,7 +20619,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.116",
-"datetime":"2016-06-0822:45:00"
+"datetime":"2016-06-08T22:45:00"
 },
 "offset":773100.0
 },
@@ -20627,7 +20627,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.114",
-"datetime":"2016-06-0822:50:00"
+"datetime":"2016-06-08T22:50:00"
 },
 "offset":773400.0
 },
@@ -20635,7 +20635,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.111",
-"datetime":"2016-06-0822:55:00"
+"datetime":"2016-06-08T22:55:00"
 },
 "offset":773700.0
 },
@@ -20643,7 +20643,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.109",
-"datetime":"2016-06-0823:00:00"
+"datetime":"2016-06-08T23:00:00"
 },
 "offset":774000.0
 },
@@ -20651,7 +20651,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.107",
-"datetime":"2016-06-0823:05:00"
+"datetime":"2016-06-08T23:05:00"
 },
 "offset":774300.0
 },
@@ -20659,7 +20659,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.105",
-"datetime":"2016-06-0823:10:00"
+"datetime":"2016-06-08T23:10:00"
 },
 "offset":774600.0
 },
@@ -20667,7 +20667,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.103",
-"datetime":"2016-06-0823:15:00"
+"datetime":"2016-06-08T23:15:00"
 },
 "offset":774900.0
 },
@@ -20675,7 +20675,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.101",
-"datetime":"2016-06-0823:20:00"
+"datetime":"2016-06-08T23:20:00"
 },
 "offset":775200.0
 },
@@ -20683,7 +20683,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.099",
-"datetime":"2016-06-0823:25:00"
+"datetime":"2016-06-08T23:25:00"
 },
 "offset":775500.0
 },
@@ -20691,7 +20691,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.097",
-"datetime":"2016-06-0823:30:00"
+"datetime":"2016-06-08T23:30:00"
 },
 "offset":775800.0
 },
@@ -20699,7 +20699,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.095",
-"datetime":"2016-06-0823:35:00"
+"datetime":"2016-06-08T23:35:00"
 },
 "offset":776100.0
 },
@@ -20707,7 +20707,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.093",
-"datetime":"2016-06-0823:40:00"
+"datetime":"2016-06-08T23:40:00"
 },
 "offset":776400.0
 },
@@ -20715,7 +20715,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.091",
-"datetime":"2016-06-0823:45:00"
+"datetime":"2016-06-08T23:45:00"
 },
 "offset":776700.0
 },
@@ -20723,7 +20723,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.089",
-"datetime":"2016-06-0823:50:00"
+"datetime":"2016-06-08T23:50:00"
 },
 "offset":777000.0
 },
@@ -20731,7 +20731,7 @@
 "message":{
 "type":"sensor",
 "F_2_Z_2_HaziumConcentration":"0.087",
-"datetime":"2016-06-0823:55:00"
+"datetime":"2016-06-08T23:55:00"
 },
 "offset":777300.0
 },
