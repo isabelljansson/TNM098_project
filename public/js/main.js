@@ -71,29 +71,45 @@ var tmpF3Z1 = [];
     httpGetAsync('/getHaziumF1Z8', function(response){
         //console.log(response);
         for(var i = 0; i < response.length; i++)
-            tmpF1Z8.push(response[i]);
+            tmpF1Z8.push({"datetime": format.parse(response[i].datetime), "F1Z8": response[i].F1Z8} );
 });
     httpGetAsync('/getHaziumF2Z2', function(response){
         //console.log(response);
         for(var i = 0; i < response.length; i++)
-            tmpF2Z2.push(response[i]);
+            tmpF2Z2.push({"datetime": format.parse(response[i].datetime), "F2Z2": response[i].F2Z2});
 });
     httpGetAsync('/getHaziumF2Z4', function(response){
         //console.log(response);
         for(var i = 0; i < response.length; i++)
-            tmpF2Z4.push(response[i]);
+            tmpF2Z4.push({"datetime": format.parse(response[i].datetime), "F2Z4": response[i].F2Z4});
 });
     httpGetAsync('/getHaziumF3Z1', function(response){
         //console.log(response);
         for(var i = 0; i < response.length; i++)
-            tmpF3Z1.push(response[i]);
+            tmpF3Z1.push({"datetime": format.parse(response[i].datetime), "F3Z1": response[i].F3Z1});
 });
-// something weird with time..
-for (var i = 0; i < tmpF1Z8.length; i++) {
-    hazium.push({"datetime": tmpF1Z8[i].datetime, "F1Z8": tmpF1Z8[i].F1Z8,
-                "F2Z2": tmpF2Z2[i], "F2Z4": tmpF2Z4[i], "F3Z1": tmpF3Z1[i]});
+
+// sort all list by time
+function sortArray(element1, element2) {
+    return element1.datetime.getTime() - element2.datetime.getTime();
 }
 
+/*
+for (var i = 0; i < tmpF1Z8.length; i++) {
+    tmpF1Z8[i].datetime = format.parse(tmpF1Z8[i].datetime);
+    tmpF2Z2[i].datetime = format.parse(tmpF2Z4[i].datetime);
+    tmpF2Z4[i].datetime = format.parse(tmpF2Z4[i].datetime);
+    tmpF3Z1[i].datetime = format.parse(tmpF3Z1[i].datetime);
+}
+*/
+tmpF1Z8.sort(sortArray);
+tmpF2Z2.sort(sortArray);
+tmpF2Z4.sort(sortArray);
+tmpF3Z1.sort(sortArray);
+for (var i = 0; i < tmpF1Z8.length; i++) {
+    hazium.push({"datetime": tmpF1Z8[i].datetime, "F1Z8": tmpF1Z8[i].F1Z8,
+                "F2Z2": tmpF2Z2[i].F2Z2, "F2Z4": tmpF2Z4[i].F2Z4, "F3Z1": tmpF3Z1[i].F3Z1});
+}
 
 var currImg = 0;
 var currView = 0;
@@ -167,16 +183,16 @@ function draw()
 
 // fuzzy kmeans cluster people to find the people in biggest risk of hazium
 this.cluster = function () {
-    console.log("Enter clustering")
+    console.log("Enter clustering");
     // Filter to only store relevant people in the kmeansArray
     kmeansArray = [];
-    var now;
-    tmpF1Z8.forEach(function(d,i) {
+    var next;
+    var fiveMin = 300000;
+    hazium.forEach(function(d,i) {
         
         if (d.F1Z8 > 0.0) {
-            now = format.parse(d.datetime);
-            console.log(now);
-            // find people in zone at set time - query?
+            next = new Date(d.datetime.getTime()+fiveMin);
+            //find people in zone at time between d.datetime->then - query?
         }
 
         if (d.F2Z2 > 0.0)
