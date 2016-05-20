@@ -97,10 +97,10 @@ app.get('/getGeneral/:id', function (req, res) {
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
-          console.log(doc)
+          console.log(doc[0])
           for(var i = 0; i < doc.length; i++)
               tmp.push({"val": doc[i].message[varId]})
-          console.log(tmp)
+          console.log(tmp[0])
           res.send(tmp);
         });
       });

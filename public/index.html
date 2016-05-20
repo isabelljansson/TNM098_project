@@ -10,13 +10,13 @@
   <title>Fear the Hazium</title>
 
 </head>
-<body>
+<body onload="getSelected()">
 
 	<div class="container" ng-controller="mainCtrl">
 		<h1>GAStech Offices</h1>
 
 		<div id="center" class="col-md-6" style ="height: 80vh; width: 50vw">
-            <div id ="map" style ="height: 80vh; width: 62vw">
+    		<div id ="map" style ="height: 80vh; width: 62vw">
             	<!-- <img src="images/floor1.jpg" alt="Plan of Floor 1" width="90%" height="90%"> -->
             </div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
@@ -24,12 +24,21 @@
 
            		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
 
-              <button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
+              	<button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
 
-              <div id="floor"></div>
-
-            </div>
-		</div>	
+              	<div id="floor"></div>
+              	 <select id="devList" onchange="deviation(this);">
+					<option value="LoopTempSchedule">Loop Temp Schedule</option>
+					<option value="SupplySideOutletTemperature">Supply Side Outlet Temperature</option>
+					<option value="WaterHeaterGasRate">Water Heater Gas Rate</option>
+					<option value="DELI-FANPower">DELI-FAN Power</option>
+					<option value="SupplySideInletMassFlowRate">Supply Side Inlet Mass Flow Rate</option>
+					<option value="HVACElectricDemandPower">HVAC Electric Demand Power</option>
+					<!--<option value=""></option>-->
+				</select> 
+			</div>
+		</div>
+	</div>	
 </body>
 
 <script src="js/vendor/jquery.min.js"></script>

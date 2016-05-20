@@ -45,13 +45,21 @@ var projection = d3.geo.mercator()
 //Creates a new geographic path generator and assing the projection        
 var path = d3.geo.path().projection(projection);
 
-
+function getSelected() {
+    var e = document.getElementById('devList');
+    var val = e.options[e.selectedIndex];
+    deviation(val);
+    
+}
 // data for general
 var genData = [];
-httpGetAsync('/getGeneral/PumpPower', function(response){
-    for(var i = 0; i < response.length; i++)
-            genData.push(response[i]);
-});
+function deviation(selected) {
+    console.log('sel: ' + selected.value);
+    httpGetAsync('/getGeneral/'.concat(selected.value), function(response){
+        for(var i = 0; i < response.length; i++)
+                genData.push(response[i]);
+    });
+}
 
 // data for zone clustering
 var zoneData = [];
