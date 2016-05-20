@@ -87,6 +87,7 @@ app.get('/getGeneral/:id', function (req, res) {
     var msg = "message.".concat(varId);
     // Make it into an object to query
     action[msg] = 1;
+    action['message.datetime'] = 1;
     action['_id'] = 0;
 
     //just test to find in db
@@ -97,9 +98,9 @@ app.get('/getGeneral/:id', function (req, res) {
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
-          console.log(doc[0])
+          console.log(doc)
           for(var i = 0; i < doc.length; i++)
-              tmp.push({"val": doc[i].message[varId]})
+              tmp.push({"val": doc[i].message[varId], "datetime": doc[i].message.datetime})
           console.log(tmp[0])
           res.send(tmp);
         });
