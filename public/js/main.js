@@ -53,11 +53,16 @@ function getSelected() {
 }
 // data for general
 var genData = [];
+var mean = 0;
 function deviation(selected) {
     console.log('sel: ' + selected.value);
     httpGetAsync('/getGeneral/'.concat(selected.value), function(response){
-        for(var i = 0; i < response.length; i++)
+        for(var i = 0; i < response.length; i++) {
                 genData.push(response[i]);
+                mean += parseFloat(response[i].val);
+        }
+        mean /= parseFloat(response.length);
+        console.log('mean: ' + mean);
     });
 }
 
