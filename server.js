@@ -35,6 +35,7 @@ app.get('/', function (req, res) {
 });*/
 
 
+
 // Proximity Out
 app.get('/getProxOut', function (req, res) {
     var tmp = [];
@@ -55,7 +56,6 @@ app.get('/getProxOut', function (req, res) {
         });
       });
 });
-
 
 // Proximity Mobile Out
 app.get('/getProxMobility', function (req, res) {
@@ -78,6 +78,31 @@ app.get('/getProxMobility', function (req, res) {
   });
 });
 
+// General
+app.get('/getGeneral/:id', function (req, res) {
+    var tmp = [];
+    var varId = req.params.id;
+    var action = {};
+    var msg = "message.".concat(varId);
+    action[msg] = 1;
+    action['_id'] = 0;
+
+    //just test to find in db
+    general.find(
+      { },
+      action,
+
+      function(err, cursor)
+      {
+        cursor.toArray(function(err, doc){
+          console.log(doc)
+          for(var i = 0; i < doc.length; i++)
+              tmp.push({"val": doc[i].message[varId]})
+          console.log(tmp)
+          res.send(tmp);
+        });
+      });
+});
 
 // SORT ALL HAZIUM DATA AFTER TIME
 // Get F1Z8 hazium levels

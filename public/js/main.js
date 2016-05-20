@@ -46,6 +46,13 @@ var projection = d3.geo.mercator()
 var path = d3.geo.path().projection(projection);
 
 
+// data for general
+var zoneData = [];
+httpGetAsync('/getGeneral/PumpPower', function(response){
+    for(var i = 0; i < response.length; i++)
+            zoneData.push(response[i]);
+});
+
 // data for zone clustering
 var zoneData = [];
 httpGetAsync('/getProxOut', function(response){
