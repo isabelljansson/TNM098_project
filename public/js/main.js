@@ -59,11 +59,18 @@ var points = [];
 
 var hazium = [];
     httpGetAsync('/getHaziumF1Z8', function(response){
-        console.log(response[i]);
+       // console.log(response[i]);
         for(var i = 0; i < response.length; i++)
             hazium.push(response[i]);
 });
 
+var general = [];
+    httpGetAsync('/getGeneral', function(response){
+        for(var i = 0; i < response.length; i++)
+            general.push(response[i]);
+});
+
+console.log(general)
 
 var currImg = 0;
 var currView = 0;
@@ -99,9 +106,9 @@ var imageList = [
 
 draw();
 
-console.log(points);
-console.log(zoneData);
-console.log(hazium);
+//console.log(points);
+//console.log(zoneData);
+//console.log(hazium);
 
 
 //Draws the map and the points

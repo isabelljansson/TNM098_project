@@ -27,14 +27,6 @@ MongoClient.connect('mongodb://' + config.user + ':' + config.pwd + '@127.0.0.1:
   f3z1 = db.collection('f2z4');
 });
 
-//var db = MongoClient('tnm098', ['tnm098']);
-
-/*
-app.get('/', function (req, res) {
-  	res.send('Hello World!');
-});*/
-
-
 // Proximity Out
 app.get('/getProxOut', function (req, res) {
     var tmp = [];
@@ -72,6 +64,30 @@ app.get('/getProxMobility', function (req, res) {
             tmp.push({"id": doc[i].message.proxCard,
               "coordinates": [doc[i].message.X, doc[i].message.Y], 
               "floor": doc[i].message.floor, "datetime": doc[i].message.datetime })
+        //console.log(tmp)
+        res.send(tmp);
+      });
+  });
+});
+
+
+// Proximity Mobile Out
+app.get('/getGeneral', function (req, res) {
+  var tmp = [];
+  general.find(
+    { },
+    { 'message.datetime': 1,
+      'message.WindSpeed': 1, 
+      'message.WaterHeaterTankTemperature': 1, _id: 0 }, 
+
+    function(err, cursor)
+    {
+      cursor.toArray(function(err, doc){
+        //console.log(doc[0].message.X)
+        for(var i = 0; i < doc.length; i++)
+            tmp.push({"datetime": doc[i].message.datetime,
+              "wind": doc[i].message.WindSpeed, 
+              "tankTemperature": doc[i].message.WaterHeaterTankTemperature})
         //console.log(tmp)
         res.send(tmp);
       });
