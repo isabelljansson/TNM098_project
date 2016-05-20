@@ -47,10 +47,10 @@ var path = d3.geo.path().projection(projection);
 
 
 // data for general
-var zoneData = [];
+var genData = [];
 httpGetAsync('/getGeneral/PumpPower', function(response){
     for(var i = 0; i < response.length; i++)
-            zoneData.push(response[i]);
+            genData.push(response[i]);
 });
 
 // data for zone clustering

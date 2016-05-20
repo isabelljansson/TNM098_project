@@ -81,9 +81,11 @@ app.get('/getProxMobility', function (req, res) {
 // General
 app.get('/getGeneral/:id', function (req, res) {
     var tmp = [];
+    // Get id of param to request
     var varId = req.params.id;
     var action = {};
     var msg = "message.".concat(varId);
+    // Make it into an object to query
     action[msg] = 1;
     action['_id'] = 0;
 
