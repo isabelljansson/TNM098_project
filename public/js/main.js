@@ -58,12 +58,45 @@ function deviation(selected) {
     console.log('sel: ' + selected.value);
     httpGetAsync('/getGeneral/'.concat(selected.value), function(response){
         for(var i = 0; i < response.length; i++) {
-                genData.push(response[i]);
+                genData.push({"datetime": format.parse(response[i].datetime),
+                "val":response[i].val});
                 mean += parseFloat(response[i].val);
         }
         mean /= parseFloat(response.length);
-        console.log('mean: ' + mean);
+        console.log('mean: ' + mean + 'resp: ' + response.length);
     });
+    // Sort data by time
+    genData.sort(sortArray);
+    console.log(genData);
+    // Calculate distribution and put it in a table
+    $('#timetable').empty();
+    var day = undefined;// = genData[0].datetime.getDate();
+    var table, row, r, c1, c2;
+
+    for(var i = 0; i < genData.length; i++) {
+        if(day == genData[i].datetime.getDate()) {
+            // Insert row into table
+            r = table.insertRow(row);
+            c1 = r.insertCell(0);
+            c2 = r.insertCell(1);
+            c1.innerHTML = ''.concat(genData[i].datetime.getHours(), ':', genData[i].datetime.getMinutes());
+            c2.innerHTML = ''.concat(genData[i].val);
+            //c.innerHTML = mean - parseFloat(genData[i].val);
+            row++;
+        } else {
+            // Create a table for every day
+            var table = document.createElement('table');
+            document.getElementById('timetable').appendChild(table);
+            day = genData[i].datetime.getDate();
+            r = table.insertRow(0);
+            c1 = r.insertCell(0);
+            c2 = r.insertCell(1);
+            c1.innerHTML = day;
+            row = 1;
+            //col++;
+        }
+    }
+    console.log('fir ' + genData[0].datetime + ' las ' + genData[genData.length-1].datetime);
 }
 
 // data for zone clustering
