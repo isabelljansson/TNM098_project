@@ -116,14 +116,6 @@ for (var i = 0; i < tmpF1Z8.length; i++) {
 }
 //console.log(hazium)
 
-var general = [];
-    httpGetAsync('/getGeneral', function(response){
-        for(var i = 0; i < response.length; i++)
-            general.push(response[i]);
-});
-
-//console.log(general)
-
 
 var currImg = 0;
 var currView = 0;

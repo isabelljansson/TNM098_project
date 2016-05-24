@@ -84,10 +84,11 @@ app.get('/getGeneral', function (req, res) {
     {
       cursor.toArray(function(err, doc){
         //console.log(doc[0].message.X)
+        tmp.push(["datetime", "wind", "tankTemperature"]);
         for(var i = 0; i < doc.length; i++)
-            tmp.push({"datetime": doc[i].message.datetime,
-              "wind": doc[i].message.WindSpeed, 
-              "tankTemperature": doc[i].message.WaterHeaterTankTemperature})
+            tmp.push([doc[i].message.datetime,
+                      doc[i].message.WindSpeed, 
+                      doc[i].message.WaterHeaterTankTemperature])
         //console.log(tmp)
         res.send(tmp);
       });
