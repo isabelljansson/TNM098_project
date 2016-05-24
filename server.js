@@ -78,39 +78,40 @@ app.get('/getGeneral', function (req, res) {
     { },
     { 'message.datetime': 1, 
       'message.SupplySideOutletTemperature': 1, 
-      'message.WaterHeaterGasRate': 1, 
-      'message.SupplySideInletMassFlowRate': 1, 
+      //'message.DELI-FANPower': 1, 
+      //'message.SupplySideInletMassFlowRate': 1, 
       'message.HVACElectricDemandPower': 1, 
-      'message.HEATScheduleValue': 1, 
-      'message.PumpPower': 1, 
+      //'message.PumpPower': 1, 
       'message.WaterHeaterTankTemperature': 1, 
-      'message.SupplySideInletTemperature': 1, 
+      'message.SupplySideInletTemperature': 1,   
+      'message.WindDirection': 1, 
+      'message.TotalElectricDemandPower': 1, 
       'message.DrybulbTemperature': 1, 
-      'message.WaterHeaterSetpoint': 1, 
-      'message.WindSpeed': 1, 
-      'message.COOLScheduleValue': 1, 
-      'message.TotalElectricDemandPower': 1, _id: 0 }, 
+      'message.WindSpeed': 1, _id: 0 }, 
 
     function(err, cursor)
     {
       cursor.toArray(function(err, doc){
         //console.log(doc[0].message.X)
-        tmp.push(["datetime", "wind", "tankTemperature"]);
+        tmp.push(["datetime", "SupplySideOutletTemperature",// "DELI-FANPower",
+        //"SupplySideInletMassFlowRate", 
+        "HVACElectricDemandPower", //"PumpPower",
+        "WaterHeaterTankTemperature", "SupplySideInletTemperature", "WindDirection", 
+        "TotalElectricDemandPower", "DrybulbTemperature", "WindSpeed"]);
         for(var i = 0; i < doc.length; i++)
             tmp.push([doc[i].message.datetime,
                       doc[i].message.SupplySideOutletTemperature, 
-                      doc[i].message.WaterHeaterGasRate, 
-                      doc[i].message.SupplySideInletMassFlowRate, 
+                     // doc[i].message.DELI-FANPower,  
+                      //doc[i].message.SupplySideInletMassFlowRate, 
                       doc[i].message.HVACElectricDemandPower, 
-                      doc[i].message.HEATScheduleValue, 
-                      doc[i].message.WaterHeaterTankTemperature, 
+                      //doc[i].message.PumpPower, 
+                      doc[i].message.WaterHeaterTankTemperature,  
                       doc[i].message.SupplySideInletTemperature, 
+                      doc[i].message.WindDirection,
+                      doc[i].message.TotalElectricDemandPower,
                       doc[i].message.DrybulbTemperature, 
-                      doc[i].message.WaterHeaterSetpoint, 
-                      doc[i].message.WindSpeed, 
-                      doc[i].message.COOLScheduleValue,
-                      doc[i].message.TotalElectricDemandPower, ])
-        console.log(tmp)
+                      doc[i].message.WindSpeed ]);
+        //console.log(tmp)
         res.send(tmp);
       });
   });

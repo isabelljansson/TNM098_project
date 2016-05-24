@@ -25,6 +25,8 @@ function pc(){
 
     var x = d3.scale.ordinal().rangePoints([0, width], 1),
         y = {};
+        dragging = {};
+        axisText = [];
 
     var line = d3.svg.line(),
         axis = d3.svg.axis().orient("left"),
@@ -42,33 +44,33 @@ function pc(){
     httpGetAsync('/getGeneral', function(data){
     	
     	
-    	//self.data.push(["datetime", "wind", "tankTemperature"]);
+    	axisText = data[0];
+    	console.log(axisText)
     	//d3.set(["datetime", "wind", "tankTemperature"]).values(self.data);
     	for(var i = 1; i < data.length; i++)
-    		self.data.push([format.parse(data[i][0]), 
-    						Number(data[i][1]), 
-    						Number(data[i][2]),
-    						Number(data[i][3]),
-    						Number(data[i][4]),
-    						Number(data[i][5]),
-    						Number(data[i][6]),
-    						Number(data[i][7]),
-    						Number(data[i][8]),
-    						Number(data[i][9]),
-    						Number(data[i][10]),
-    						Number(data[i][11]),
-    						Number(data[i][12])]);
+    	{
+    		self.data.push([format.parse(data[i][0]), //datetime
+    						Number(data[i][1]), 	  //SupplySideOutletTemperature
+    						//Number(data[i][2]),		  //SupplySideInletMassFlowRate
+    						Number(data[i][2]),		  //HVACElectricDemandPower
+    						//Number(data[i][4]),		  //PumpPower
+    						Number(data[i][3]),		  //WaterHeaterTankTemperature
+    						Number(data[i][4]),		  //SupplySideInletTemperature
+    						Number(data[i][5]),		  //WindDirection
+    						Number(data[i][6]),		  //TotalElectricDemandPower
+    						Number(data[i][7]),		  //DrybulbTemperature
+    						Number(data[i][8])]);	  //WindSpeed
+    		
+    	}
     	
-
-    	console.log(self.data)
+    	//console.log(self.data)
         // Extract the list of dimensions and create a scale for each.
 	    x.domain(dimensions = d3.keys(self.data[0]).filter(function(d) {
-	    	console.log(d3.keys(self.data[0]))
             return d != 0 && (y[d] = d3.scale.linear()
-                .domain(d3.extent(self.data, function(p) {
-                    return +p[d];}))
-                .range([height, 0])); 
-        }));
+		        .domain(d3.extent(self.data, function(p) { return +p[d]; }))
+		        .range([height, 0]));
+		        }));
+
 
        draw();
     });
@@ -80,9 +82,9 @@ function pc(){
         background = svg.append("svg:g")
             .attr("class", "background")
             .selectAll("path")
-            .data(self.data);/*
+            .data(self.data)
     		.enter().append("path")
-      		.attr("d", path);*/
+      		.attr("d", path);
 
         // Add blue foreground lines for focus.
         foreground = svg.append("g")
@@ -91,14 +93,42 @@ function pc(){
      		.data(self.data)
     		.enter().append("path")
       		.attr("d", path);
-
-        // Add a group element for each dimension.
-        var g = svg.selectAll(".dimension")
-            .data(dimensions)
-            .enter().append("svg:g")
-            .attr("class", "dimension")
-            .attr("transform", function(d) { return "translate(" + x(d) + ")"; });
             
+
+		// Add a group element for each dimension.
+		var g = svg.selectAll(".dimension")
+			.data(dimensions)
+			.enter().append("g")
+			.attr("class", "dimension")
+			.attr("transform", function(d) { return "translate(" + x(d) + ")"; })
+			.call(d3.behavior.drag()
+			.origin(function(d) { return {x: x(d)}; })
+			.on("dragstart", function(d) {
+				dragging[d] = x(d);
+				background.attr("visibility", "hidden");
+			})
+			.on("drag", function(d) {
+				dragging[d] = Math.min(width, Math.max(0, d3.event.x));
+				foreground.attr("d", path);
+				dimensions.sort(function(a, b) { return position(a) - position(b); });
+				x.domain(dimensions);
+				g.attr("transform", function(d) { return "translate(" + position(d) + ")"; })
+				})
+			.on("dragend", function(d) {
+				delete dragging[d];
+				transition(d3.select(this)).attr("transform", "translate(" + x(d) + ")");
+				transition(foreground).attr("d", path);
+				background
+				  	.attr("d", path)
+					.transition()
+				  	.delay(500)
+				  	.duration(0)
+				  	.attr("visibility", null);
+			}));
+
+
+
+
         // Add an axis and title.
         g.append("g")
 			.attr("class", "axis")
@@ -106,7 +136,9 @@ function pc(){
     	.append("text")
 			.style("text-anchor", "middle")
 			.attr("y", -9)
-			.text(function(d) { return d; });
+			.text(function(d){
+					return axisText[d];
+			});
 
         // Add and store a brush for each axis.
         g.append("svg:g")
@@ -117,6 +149,15 @@ function pc(){
             .attr("width", 16);
 
     }
+
+    function position(d) {
+		var v = dragging[d];
+		return v == null ? x(d) : v;
+	}
+
+	function transition(g) {
+		return g.transition().duration(500);
+	}
 
      // Returns the path for a given data point.
     function path(d) {
