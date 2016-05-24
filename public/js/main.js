@@ -71,18 +71,21 @@ function deviation(selected) {
     // Calculate distribution and put it in a table
     $('#timetable').empty();
     var day = undefined;// = genData[0].datetime.getDate();
-    var table, row, r, c1, c2;
-
+    var table, row, r, c1, c2, vb, va;
+    var n = 2;
     for(var i = 0; i < genData.length; i++) {
-        if(day == genData[i].datetime.getDate()) {
-            // Insert row into table
-            r = table.insertRow(row);
-            c1 = r.insertCell(0);
-            c2 = r.insertCell(1);
-            c1.innerHTML = ''.concat(genData[i].datetime.getHours(), ':', genData[i].datetime.getMinutes());
-            c2.innerHTML = ''.concat(genData[i].val);
-            //c.innerHTML = mean - parseFloat(genData[i].val);
-            row++;
+        if(day === genData[i].datetime.getDate()) {
+            if(i < n || (variance(genData.slice(i-n,i)) >
+                variance(genData.slice(i-n+1,i+1)))) {
+                // Insert row into table
+                r = table.insertRow(row);
+                c1 = r.insertCell(0);
+                c2 = r.insertCell(1);
+                c1.innerHTML = getTime(genData[i].datetime);
+                c2.innerHTML = ''.concat(genData[i].val);
+                //c.innerHTML = mean - parseFloat(genData[i].val);
+                row++;
+            }
         } else {
             // Create a table for every day
             var table = document.createElement('table');
@@ -93,12 +96,33 @@ function deviation(selected) {
             c2 = r.insertCell(1);
             c1.innerHTML = day;
             row = 1;
-            //col++;
         }
     }
     console.log('fir ' + genData[0].datetime + ' las ' + genData[genData.length-1].datetime);
 }
 
+function variance(X) {
+    var mean = 0, v = 0;
+    for( var i = 0; i < X.length; i++) {
+       mean += parseFloat(X[i].val); 
+    }
+    mean /= X.length;
+    for( var i = 0; i < X.length; i++) {
+        v += Math.pow(parseFloat(X[i].val - mean), 2);
+    }
+    v /= X.length - 1;
+    console.log('v: ' + v + ' Xlength: ' + X.length);
+    return v;
+}
+    
+function getTime(time) {
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    hour < 10 ? hour = '0' + hour : hour; 
+    minute < 10 ? minute = '0' + minute : minute; 
+    return hour + ':' + minute;
+}
+    
 // data for zone clustering
 var zoneData = [];
 httpGetAsync('/getProxOut', function(response){
