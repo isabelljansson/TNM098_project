@@ -76,9 +76,20 @@ app.get('/getGeneral', function (req, res) {
   var tmp = [];
   general.find(
     { },
-    { 'message.datetime': 1,
+    { 'message.datetime': 1, 
+      'message.SupplySideOutletTemperature': 1, 
+      'message.WaterHeaterGasRate': 1, 
+      'message.SupplySideInletMassFlowRate': 1, 
+      'message.HVACElectricDemandPower': 1, 
+      'message.HEATScheduleValue': 1, 
+      'message.PumpPower': 1, 
+      'message.WaterHeaterTankTemperature': 1, 
+      'message.SupplySideInletTemperature': 1, 
+      'message.DrybulbTemperature': 1, 
+      'message.WaterHeaterSetpoint': 1, 
       'message.WindSpeed': 1, 
-      'message.WaterHeaterTankTemperature': 1, _id: 0 }, 
+      'message.COOLScheduleValue': 1, 
+      'message.TotalElectricDemandPower': 1, _id: 0 }, 
 
     function(err, cursor)
     {
@@ -87,9 +98,19 @@ app.get('/getGeneral', function (req, res) {
         tmp.push(["datetime", "wind", "tankTemperature"]);
         for(var i = 0; i < doc.length; i++)
             tmp.push([doc[i].message.datetime,
+                      doc[i].message.SupplySideOutletTemperature, 
+                      doc[i].message.WaterHeaterGasRate, 
+                      doc[i].message.SupplySideInletMassFlowRate, 
+                      doc[i].message.HVACElectricDemandPower, 
+                      doc[i].message.HEATScheduleValue, 
+                      doc[i].message.WaterHeaterTankTemperature, 
+                      doc[i].message.SupplySideInletTemperature, 
+                      doc[i].message.DrybulbTemperature, 
+                      doc[i].message.WaterHeaterSetpoint, 
                       doc[i].message.WindSpeed, 
-                      doc[i].message.WaterHeaterTankTemperature])
-        //console.log(tmp)
+                      doc[i].message.COOLScheduleValue,
+                      doc[i].message.TotalElectricDemandPower, ])
+        console.log(tmp)
         res.send(tmp);
       });
   });

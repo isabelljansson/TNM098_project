@@ -41,16 +41,30 @@ function pc(){
     self.data = [];
     httpGetAsync('/getGeneral', function(data){
     	
-    	self.data.push(["datetime", "wind", "tankTemperature"]);
     	
+    	//self.data.push(["datetime", "wind", "tankTemperature"]);
+    	//d3.set(["datetime", "wind", "tankTemperature"]).values(self.data);
     	for(var i = 1; i < data.length; i++)
-    		self.data.push([format.parse(data[i][0]), Number(data[i][1]), Number(data[i][2])]);
+    		self.data.push([format.parse(data[i][0]), 
+    						Number(data[i][1]), 
+    						Number(data[i][2]),
+    						Number(data[i][3]),
+    						Number(data[i][4]),
+    						Number(data[i][5]),
+    						Number(data[i][6]),
+    						Number(data[i][7]),
+    						Number(data[i][8]),
+    						Number(data[i][9]),
+    						Number(data[i][10]),
+    						Number(data[i][11]),
+    						Number(data[i][12])]);
+    	
 
-    	//console.log(self.data)
+    	console.log(self.data)
         // Extract the list of dimensions and create a scale for each.
-	    x.domain(dimensions = d3.keys(data[0]).filter(function(d) {
-	    	console.log(d)
-            return d != "datetime" && (y[d] = d3.scale.linear()
+	    x.domain(dimensions = d3.keys(self.data[0]).filter(function(d) {
+	    	console.log(d3.keys(self.data[0]))
+            return d != 0 && (y[d] = d3.scale.linear()
                 .domain(d3.extent(self.data, function(p) {
                     return +p[d];}))
                 .range([height, 0])); 
@@ -86,13 +100,13 @@ function pc(){
             .attr("transform", function(d) { return "translate(" + x(d) + ")"; });
             
         // Add an axis and title.
-        g.append("svg:g")
-            .attr("class", "axis")
-            //add scale
-            .append("svg:text")
-            .attr("text-anchor", "middle")
-            .attr("y", -9)
-            .text(String);
+        g.append("g")
+			.attr("class", "axis")
+			.each(function(d) { d3.select(this).call(axis.scale(y[d])); })
+    	.append("text")
+			.style("text-anchor", "middle")
+			.attr("y", -9)
+			.text(function(d) { return d; });
 
         // Add and store a brush for each axis.
         g.append("svg:g")
