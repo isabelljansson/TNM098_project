@@ -35,14 +35,23 @@ app.get('/', function (req, res) {
 });*/
 
 
-// Proximity Out
-app.get('/getProxOut', function (req, res) {
+// Zone data
+app.get('/getProxOut/:id', function (req, res) {
     var tmp = [];
-    //just test to find in db
+    var varId = req.params.id; //18, 22, 24, 31 Floor_Zone
+    var action;
+    if (varId == '18') {
+      action = { 'message.zone': '8', 'message.floor': '1' };
+    } else if (varId == '22') {
+      action = { 'message.zone': '2', 'message.floor': '2' };
+    } else if (varId == '24') {
+      action = { 'message.zone': '4', 'message.floor': '2' };
+    } else if (varId == '31') {
+      action = { 'message.zone': '1', 'message.floor': '3' };
+    }
     proxOut.find(
-      { },
-      { 'message.zone': 1, 'message.floor': 1, 'message.datetime': 1, 'message.proxCard': 1, _id: 0 }, 
-
+      //{ 'message.zone': '8', 'message.floor': '1' },
+      action,
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){

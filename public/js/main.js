@@ -27,7 +27,15 @@ width = mapDiv.width() - margin.right - margin.left,
 height = mapDiv.height() - margin.top - margin.bottom;
 
 //Sets the colormap
-var colors = colorbrewer.Set3[10];
+var colors =   ["#7f0000",
+                "#b30000",
+                "#d7301f",
+                "#ef6548",
+                "#fc8d59",
+                "#fdbb84",
+                "#fdd49e",
+                "#fee8c8",
+                "#fff7ec"];
 
 //Assings the svg canvas to the map div
 var svg = d3.select("#map").append("svg")
@@ -45,13 +53,22 @@ var projection = d3.geo.mercator()
 //Creates a new geographic path generator and assing the projection        
 var path = d3.geo.path().projection(projection);
 
+// sort all list by time
+function sortArray(element1, element2) {
+    return element1.datetime.getTime() - element2.datetime.getTime();
+}
+// sort list by clusters
+function sortbyClusters(element1, element2) {
+    return element1.clusters - element2.clusters;
+}
 
-// data for zone clustering
-var zoneData = [];
-httpGetAsync('/getProxOut', function(response){
-    for(var i = 0; i < response.length; i++)
-            zoneData.push(response[i]);
-});
+function find(array, id) {
+    for(var i=0;i<array.length;i++) {
+        if (array[i].id == id)
+            return i;
+    }
+    return -1;
+}
 
 // data for plotted points
 var points = [];
@@ -60,6 +77,29 @@ var points = [];
             points.push(response[i]);
 });
 
+// data for zone clustering
+var foundPeople1 = [];
+var foundPeople2 = [];
+var foundPeople3 = [];
+httpGetAsync('/getProxOut/18', function(response){
+    for(var i = 0; i < response.length; i++)
+        foundPeople1.push({"datetime": format.parse(response[i].datetime), "zone": response[i].zone, "floor": response[i].floor, "id": response[i].id, });
+});
+httpGetAsync('/getProxOut/22', function(response){
+    for(var i = 0; i < response.length; i++)
+        foundPeople2.push({"datetime": format.parse(response[i].datetime), "zone": response[i].zone, "floor": response[i].floor, "id": response[i].id, });
+});
+httpGetAsync('/getProxOut/24', function(response){
+    for(var i = 0; i < response.length; i++)
+        foundPeople2.push({"datetime": format.parse(response[i].datetime), "zone": response[i].zone, "floor": response[i].floor, "id": response[i].id, });
+});
+httpGetAsync('/getProxOut/31', function(response){
+    for(var i = 0; i < response.length; i++)
+        foundPeople3.push({"datetime": format.parse(response[i].datetime), "zone": response[i].zone, "floor": response[i].floor, "id": response[i].id, });
+});
+foundPeople1.sort(sortArray);
+foundPeople2.sort(sortArray);
+foundPeople3.sort(sortArray);
 
 // Get all hazium data and store it in one variable
 var hazium = [];
@@ -69,39 +109,24 @@ var tmpF2Z4 = [];
 var tmpF3Z1 = [];
 
     httpGetAsync('/getHaziumF1Z8', function(response){
-        //console.log(response);
         for(var i = 0; i < response.length; i++)
             tmpF1Z8.push({"datetime": format.parse(response[i].datetime), "F1Z8": response[i].F1Z8} );
 });
     httpGetAsync('/getHaziumF2Z2', function(response){
-        //console.log(response);
         for(var i = 0; i < response.length; i++)
             tmpF2Z2.push({"datetime": format.parse(response[i].datetime), "F2Z2": response[i].F2Z2});
 });
     httpGetAsync('/getHaziumF2Z4', function(response){
-        //console.log(response);
         for(var i = 0; i < response.length; i++)
             tmpF2Z4.push({"datetime": format.parse(response[i].datetime), "F2Z4": response[i].F2Z4});
 });
     httpGetAsync('/getHaziumF3Z1', function(response){
-        //console.log(response);
         for(var i = 0; i < response.length; i++)
             tmpF3Z1.push({"datetime": format.parse(response[i].datetime), "F3Z1": response[i].F3Z1});
 });
 
-// sort all list by time
-function sortArray(element1, element2) {
-    return element1.datetime.getTime() - element2.datetime.getTime();
-}
 
-/*
-for (var i = 0; i < tmpF1Z8.length; i++) {
-    tmpF1Z8[i].datetime = format.parse(tmpF1Z8[i].datetime);
-    tmpF2Z2[i].datetime = format.parse(tmpF2Z4[i].datetime);
-    tmpF2Z4[i].datetime = format.parse(tmpF2Z4[i].datetime);
-    tmpF3Z1[i].datetime = format.parse(tmpF3Z1[i].datetime);
-}
-*/
+// Make one hazium list
 tmpF1Z8.sort(sortArray);
 tmpF2Z2.sort(sortArray);
 tmpF2Z4.sort(sortArray);
@@ -143,10 +168,22 @@ var imageList = [
         "images/proxz_F3.jpg"
     ];
 
+var plotList = [
+        "Floor 1",        // 0
+        "Floor 1 Energy Zones",
+        "Floor 1 Proximity Zones",
+        "Floor 2",        // 3
+        "Floor 2 Energy Zones",
+        "Floor 2 Proximity Zones",
+        "Floor 3",        // 6
+        "Floor 3 Energy Zones",
+        "Floor 3 Proximity Zones"
+    ];
+
 draw();
 
 //console.log(points);
-//console.log(zoneData);
+//console.log(foundPeople);
 //console.log(hazium);
 
 
@@ -175,77 +212,126 @@ function draw()
         .attr("r", 5)
         .style("opacity", function(d){
                 return (Number(d.floor) == currImg+1) ? 1 : 0.0
-            });
+            })
+        .style("fill", function(d, i){ 
+            if (cc[i] != undefined) 
+                return cc[i]; 
+            else
+                return "black";
+        });
 
 
-    $('#floor').append('<legend id="child">' + imageList[currImg*3 + currView] + '</legend>').html;
+    $('#floor').append('<legend id="child">' + plotList[currImg*3 + currView] + '</legend>').html;
 };
 
 // fuzzy kmeans cluster people to find the people in biggest risk of hazium
 this.cluster = function () {
+        $('#list').remove();
     console.log("Enter clustering");
     // Filter to only store relevant people in the kmeansArray
     kmeansArray = [];
     var next;
+    var found = -1;
     var fiveMin = 300000;
     hazium.forEach(function(d,i) {
+        next = new Date(d.datetime.getTime()+fiveMin);
         
         if (d.F1Z8 > 0.0) {
-            next = new Date(d.datetime.getTime()+fiveMin);
-            //find people in zone at time between d.datetime->then - query?
+            for (var i = 0; i < foundPeople1.length; i++) {
+                if ( foundPeople1[i].datetime.getTime() <= next && foundPeople1[i].datetime.getTime() >= d.datetime.getTime() ) {
+                    found = find(kmeansArray, foundPeople1[i].id) 
+                    if (found > -1) {
+                        kmeansArray[found].times++;
+                        kmeansArray[found].hazium += Number(d.F1Z8);
+                    }
+                    else {
+                        kmeansArray.push({ "id": foundPeople1[i].id, "times": 1, "hazium": Number(d.F1Z8) });
+                    }
+                }
+                
+            }
         }
 
-        if (d.F2Z2 > 0.0)
+        if (d.F2Z2 > 0.0 || d.F2Z4) {
+            for (var i = 0; i < foundPeople2.length; i++) {
+                if ( foundPeople2[i].datetime.getTime() <= next && foundPeople2[i].datetime.getTime() >= d.datetime.getTime() ) {
+                    found = find(kmeansArray, foundPeople2[i].id) 
+                    if (found > -1) {
+                        kmeansArray[found].times++;
+                        if (foundPeople2[i].zone == '2')
+                            kmeansArray[found].hazium += Number(d.F2Z2);
+                        else
+                            kmeansArray[found].hazium += Number(d.F2Z4);
+                    }
+                    else {
+                        var h;
+                        if (foundPeople2[i].zone == '2')
+                            h = Number(d.F2Z2);
+                        else
+                            h = Number(d.F2Z4);
+                        kmeansArray.push({ "id": foundPeople2[i].id, "times": 1, "hazium": h });
+                    }
+                }
+                
+            }
 
-        if (d.F2Z4 > 0.0)
-
-        if (d.F3Z1 > 0.0)
-
-
-         // haziumData.findIndex(time).hazium > 0
-        // If we're in any of the sensor zones
-        if ( (d.floor == 1 && d.zone == 8) || (d.floor == 2 && (d.zone == 2 || d.zone == 4)) 
-            || (d.floor == 1 && d.zone == 1) ) {
-            //console.log(d)
         }
-        /*
-             if (kmeansArray.find(id) == d.id) // person finns i lista
-                 kmeansArray.findIndex(id).times++;
-                 kmeansArray.findIndex(id).hazium += haziumData.findIndex(time).hazium;
-             else {
-                 kmeansArray.push(id, 1, haziumData.findIndex(time,zone).hazium)
-             }
-          */   
+        if (d.F3Z1 > 0.0) {
+            for (var i = 0; i < foundPeople3.length; i++) {
+                if ( foundPeople3[i].datetime.getTime() <= next && foundPeople3[i].datetime.getTime() >= d.datetime.getTime() ) {
+                    found = find(kmeansArray, foundPeople3[i].id) 
+                    if (found > -1) {
+                        kmeansArray[found].times++;
+                        kmeansArray[found].hazium += Number(d.F3Z1);
+                    }
+                    else {
+                        kmeansArray.push({ "id": foundPeople3[i].id, "times": 1, "hazium": Number(d.F3Z1) });
+                    }
+                }
+                
+            }
+        }   
     });
 
-    /*
-    // Do the fuzzy clustering
-    //var k = document.getElementById('k').value;
-    var kmeansRes = kmeans(kmeansArray, 2);
-    console.log(kmeansRes); // people at risk
-    
+    console.log("Do the clustering");
+    var k = document.getElementById('k').value;
+    var clusterRes = kmeans(kmeansArray, k);
+    var kmeansRes = [];
+    // add id to the cluster list so we can visualise
+    for (var i = 0; i < kmeansArray.length; ++i) {
+        kmeansRes.push( { "id": kmeansArray[i].id, "clusters": clusterRes[i] } );
+    }
+    kmeansRes.sort(sortbyClusters);
+    console.log(kmeansRes);
+    var dangerList = "";
+    for (i = 0; i < kmeansRes.length; ++i) {
+        if (kmeansRes[i].clusters === 0)
+            dangerList += "<li>" + kmeansRes[i].id + "</li>";
+        else
+            break;
+    }
+    // dangerList is the list of people with highest risk from the hazium
+    console.log(dangerList);
+    $('#floor').append('<ul id="list"> <br /><b>People at highest risk:</b>' + dangerList + '</ul>').html;
 
     // Visualize the people at risk (different clusters) - last known position of id
     var p = 0;
-    data.forEach(function(d, i) {
-        if (format.parse(d.time) >= extent[0] && format.parse(d.time) <= extent[1]) {
+    points.forEach(function(d, i) {
+        var found = find(kmeansRes, d.id);
+        if (found > -1) {
             for (j = 0; j < k; j++) {
-                if (kmeansRes[p] == j) {
+                if (kmeansRes[found].clusters === j) {
                     cc[i] = colors[j];
                 }
             }
-            p++;
         }
     });
-    data.forEach(function(d, i) {
+    points.forEach(function(d, i) {
         if (cc[i] == undefined)
             cc[i] = "black";
     });
-    
-    console.log(cc);
     d3.selectAll(".point")
     .style("fill", function(d, i){ return cc[i]; });
-    */
 };
 
 this.changeFloor = function() {
