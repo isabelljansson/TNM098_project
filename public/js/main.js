@@ -67,12 +67,11 @@ function deviation(selected) {
     });
     // Sort data by time
     genData.sort(sortArray);
-    console.log(genData);
     // Calculate distribution and put it in a table
     $('#timetable').empty();
     var day = undefined;// = genData[0].datetime.getDate();
     var table, row, r, c1, c2, vb, va;
-    var n = 2;
+    var n = 4;
     for(var i = 0; i < genData.length; i++) {
         if(day === genData[i].datetime.getDate()) {
             if(i < n || (variance(genData.slice(i-n,i)) >
@@ -98,7 +97,6 @@ function deviation(selected) {
             row = 1;
         }
     }
-    console.log('fir ' + genData[0].datetime + ' las ' + genData[genData.length-1].datetime);
 }
 
 function variance(X) {
@@ -111,7 +109,7 @@ function variance(X) {
         v += Math.pow(parseFloat(X[i].val - mean), 2);
     }
     v /= X.length - 1;
-    console.log('v: ' + v + ' Xlength: ' + X.length);
+    //console.log('v: ' + v + ' Xlength: ' + X.length);
     return v;
 }
     
