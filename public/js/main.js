@@ -92,8 +92,8 @@ function deviation(selected) {
             day = genData[i].datetime.getDate();
             r = table.insertRow(0);
             c1 = r.insertCell(0);
-            c2 = r.insertCell(1);
-            c1.innerHTML = day;
+            //c2 = r.insertCell(1);
+            c1.innerHTML = genData[i].datetime.toDateString();
             row = 1;
         }
     }
