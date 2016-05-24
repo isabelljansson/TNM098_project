@@ -1,4 +1,4 @@
-ar express = require('express');
+var express = require('express');
 //var mongoose = require('mongoose')
 var MongoClient = require('mongodb').MongoClient;
 var bodyParser = require('body-parser')
