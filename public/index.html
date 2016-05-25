@@ -7,6 +7,9 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="css/pc.css">
+
+  <!--modules css-->
   <title>Fear the Hazium</title>
 
 </head>
@@ -21,9 +24,10 @@
 	<div class="container" ng-controller="mainCtrl">
 		<h1>GAStech Offices</h1>
 
-		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 50vw">
+		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 90vw">
             <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
+
            		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
 
            		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
@@ -34,7 +38,10 @@
 
               <div id="floor"></div>
 
+
               <div id="danger"></div>
+              <div id="pc" style="height: 80vh"></div>
+
 
             </div>
 		</div>	
@@ -54,5 +61,7 @@
 
 <!-- module js -->
 <script src="js/kmeans.js"></script>
+<script src="js/pc.js"></script>
 <script src="js/main.js"></script>
+
 </html>

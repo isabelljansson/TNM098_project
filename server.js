@@ -27,12 +27,6 @@ MongoClient.connect('mongodb://' + config.user + ':' + config.pwd + '@127.0.0.1:
   f3z1 = db.collection('f3z1');
 });
 
-//var db = MongoClient('tnm098', ['tnm098']);
-
-/*
-app.get('/', function (req, res) {
-  	res.send('Hello World!');
-});*/
 
 
 // Zone data
@@ -88,8 +82,45 @@ app.get('/getProxMobility', function (req, res) {
 });
 
 
-// SORT ALL HAZIUM DATA AFTER TIME
-// Get F1Z8 hazium levels
+// Proximity Mobile Out
+app.get('/getGeneral', function (req, res) {
+  var tmp = [];
+  general.find(
+    { },
+    { 'message.datetime': 1, 
+      'message.SupplySideOutletTemperature': 1, 
+      'message.HVACElectricDemandPower': 1, 
+      'message.WaterHeaterTankTemperature': 1, 
+      'message.SupplySideInletTemperature': 1,   
+      'message.WindDirection': 1, 
+      'message.TotalElectricDemandPower': 1, 
+      'message.DrybulbTemperature': 1, 
+      'message.WindSpeed': 1, _id: 0 }, 
+
+    function(err, cursor)
+    {
+      cursor.toArray(function(err, doc){
+        tmp.push(["datetime", "SupplySideOutletTemperature",
+        "HVACElectricDemandPower", 
+        "WaterHeaterTankTemperature", "SupplySideInletTemperature", "WindDirection", 
+        "TotalElectricDemandPower", "DrybulbTemperature", "WindSpeed"]);
+        for(var i = 0; i < doc.length; i++)
+            tmp.push([doc[i].message.datetime,
+                      doc[i].message.SupplySideOutletTemperature,  
+                      doc[i].message.HVACElectricDemandPower, 
+                      doc[i].message.WaterHeaterTankTemperature,  
+                      doc[i].message.SupplySideInletTemperature, 
+                      doc[i].message.WindDirection,
+                      doc[i].message.TotalElectricDemandPower,
+                      doc[i].message.DrybulbTemperature, 
+                      doc[i].message.WindSpeed ]);
+        res.send(tmp);
+      });
+  });
+});
+
+
+// Hazium F1_Z8
 app.get('/getHaziumF1Z8', function (req, res) {
     var tmp = [];
     f1z8.find(
@@ -100,7 +131,9 @@ app.get('/getHaziumF1Z8', function (req, res) {
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push({"datetime": doc[i].message.datetime, "F1Z8": doc[i].message.F_1_Z_8A_HaziumConcentration })
+              tmp.push({"datetime": doc[i].message.datetime, "F1Z8": doc[i].message.F_1_Z_8A_HaziumConcentration });
+          
+          //console.log(tmp)
           res.send(tmp);
         });
       });
@@ -110,7 +143,8 @@ app.get('/getHaziumF2Z2', function (req, res) {
     var tmp = [];   
     f2z2.find(
       { },
-      { 'message.datetime': 1, 'message.F_2_Z_2_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1,
+        'message.F_2_Z_2_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
@@ -126,13 +160,14 @@ app.get('/getHaziumF2Z4', function (req, res) {
     var tmp = [];
     f2z4.find(
       { },
-      { 'message.datetime': 1, 'message.F_2_Z_4_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1,
+        'message.F_2_Z_4_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push({"datetime": doc[i].message.datetime , "F2Z4": doc[i].message.F_2_Z_4_HaziumConcentration});
+              tmp.push({"datetime": doc[i].message.datetime, "F2Z4": doc[i].message.F_2_Z_4_HaziumConcentration });
           res.send(tmp);
         });
       });
@@ -142,13 +177,14 @@ app.get('/getHaziumF3Z1', function (req, res) {
     var tmp = [];
     f3z1.find(
       { },
-      { 'message.datetime': 1, 'message.F_3_Z_1_HaziumConcentration': 1, _id: 0 }, 
+      { 'message.datetime': 1,
+        'message.F_3_Z_1_HaziumConcentration': 1, _id: 0 }, 
 
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
           for(var i = 0; i < doc.length; i++)
-              tmp.push({ "datetime": doc[i].message.datetime , "F3Z1": doc[i].message.F_3_Z_1_HaziumConcentration});
+              tmp.push({"datetime": doc[i].message.datetime, "F3Z1": doc[i].message.F_3_Z_1_HaziumConcentration });
           res.send(tmp);
         });
       });
