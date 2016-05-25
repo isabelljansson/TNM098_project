@@ -25,22 +25,23 @@
       <li><a data-toggle="tab" href="#deviation">Deviation</a></li>
     </ul>
 
-	<div class="tab-content" ng-controller="mainCtrl">
+	<div class="tab-content">
 
   <!-- Plot divs -->
-		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; width: 50vw">
-            <div id ="map" style ="height: 80vh; width: 62vw"></div>
-            <div id ="rest" style ="height: 80vh; width: 62vw">
+		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; ">
+            <div id="floor" style ="margin-top: 2%; width: 100%;""></div>
+            <div id ="map" style =" position: relative; height: 60%; width: 70%; margin: 0; display: inline-block;"></div>
+            <div id ="rest" style ="height: 60%; width: 30%; float: right; display: inline-block;" >
 
-           		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
+           		<button type="button" class="btn btn-default"  onclick="changeFloor()" type="button" style="margin-top: 5px; ">Change Floor</button>
 
-           		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
+           		<button type="button" class="btn btn-default" onclick="toggleView()" type="button" style="margin-top: 5px; ">Toggle view</button>
 
-              <button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
+              <button type="button" class="btn btn-default" onclick="cluster()" type="button" style="margin-top: 5px; ">Find doomed people</button>
 
-              <input id="k" type="number" min="2" max="9" step="1" value="2"/>
+              <input id="k" type="number" min="2" max="9" step="1" value="2" style="width: 15%; height: 8%; padding-top: 1%"/>
 
-              <div id="floor"></div>
+              
               <div id="danger"></div>
             </div>
 		</div>

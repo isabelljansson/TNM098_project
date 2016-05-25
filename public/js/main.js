@@ -259,11 +259,6 @@ var plotList = [
 
 draw();
 
-//console.log(points);
-//console.log(foundPeople1, foundPeople2, foundPeople3);
-//console.log(hazium);
-
-
 //Draws the map and the points
 function draw()
 {
@@ -390,7 +385,7 @@ this.cluster = function () {
     }
     // dangerList is the list of people with highest risk from the hazium
     console.log(dangerList);
-    $('#floor').append('<ul id="list"> <br /><b>People at highest risk:</b>' + dangerList + '</ul>').html;
+    $('#danger').append('<ul id="list"> <br /><b>People at highest risk:</b>' + dangerList + '</ul>').html;
 
     // Visualize the people at risk (different clusters) - last known position of id
     var p = 0;
