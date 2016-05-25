@@ -47,23 +47,25 @@ var path = d3.geo.path().projection(projection);
 
 function getSelected() {
     var e = document.getElementById('devList');
-    var val = e.options[e.selectedIndex];
-    deviation(val);
+    var val = e.options[e.selectedIndex].value;
+    if(val.indexOf("Hazium") > -1) {
+        var tempVal = val.split(' ');
+        devHazium(hazium, tempVal);
+    } else deviation(val.toString());
     
 }
 // data for general
 var genData = [];
-var mean = 0;
 function deviation(selected) {
-    console.log('sel: ' + selected.value);
-    httpGetAsync('/getGeneral/'.concat(selected.value), function(response){
+    console.log('sel: ' + selected);
+    httpGetAsync('/getGeneral/'.concat(selected), function(response){
         for(var i = 0; i < response.length; i++) {
                 genData.push({"datetime": format.parse(response[i].datetime),
                 "val":response[i].val});
-                mean += parseFloat(response[i].val);
+                //mean += parseFloat(response[i].val);
         }
-        mean /= parseFloat(response.length);
-        console.log('mean: ' + mean + 'resp: ' + response.length);
+        //mean /= parseFloat(response.length);
+        //console.log('mean: ' + mean + 'resp: ' + response.length);
     });
     // Sort data by time
     genData.sort(sortArray);
@@ -94,6 +96,41 @@ function deviation(selected) {
             c1 = r.insertCell(0);
             //c2 = r.insertCell(1);
             c1.innerHTML = genData[i].datetime.toDateString();
+            row = 1;
+        }
+    }
+}
+
+function devHazium(arr, val) {
+    console.log('hej');
+    // Calculate distribution and put it in a table
+    $('#timetable').empty();
+    var day = undefined;
+    var table, row, r, c1, c2, vb, va;
+    var n = 4;
+    for(var i = 0; i < arr.length; i++) {
+        console.log(arr[i][val]);
+        if(day === arr[i].datetime.getDate()) {
+            if(i < n || (variance(arr.slice(i-n,i)) >
+                variance(arr.slice(i-n+1,i+1)))) {
+                // Insert row into table
+                r = table.insertRow(row);
+                c1 = r.insertCell(0);
+                c2 = r.insertCell(1);
+                c1.innerHTML = getTime(arr[i].datetime);
+                c2.innerHTML = ''.concat(arr[i][val]);
+                //c.innerHTML = mean - parseFloat(arr[i].val);
+                row++;
+            }
+        } else {
+            // Create a table for every day
+            var table = document.createElement('table');
+            document.getElementById('timetable').appendChild(table);
+            day = arr[i].datetime.getDate();
+            r = table.insertRow(0);
+            c1 = r.insertCell(0);
+            //c2 = r.insertCell(1);
+            c1.innerHTML = arr[i].datetime.toDateString();
             row = 1;
         }
     }
