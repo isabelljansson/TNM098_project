@@ -10,18 +10,21 @@
   <title>Fear the Hazium</title>
 
 </head>
-<body>
+<body onload="init()">
 
-  <ul id="tabs">
-    <li><a href="#about">About JavaScript tabs</a></li>
-    <li><a href="#advantages">Advantages of tabs</a></li>
-    <li><a href="#usage">Using tabs</a></li>
-  </ul>
 
-	<div class="container" ng-controller="mainCtrl">
-		<h1>GAStech Offices</h1>
+  <div class="container" ng-controller="mainCtrl">
+  <h1>GAStech Offices</h1>
 
-		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 50vw">
+    <ul id="tabs" class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#plot">Map</a></li>
+      <li><a data-toggle="tab" href="#correlations">Correlations</a></li>
+      <li><a data-toggle="tab" href="#deviation">Deviation</a></li>
+    </ul>
+
+	<div class="tab-content" ng-controller="mainCtrl">
+
+		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; width: 50vw">
             <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
            		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
@@ -37,7 +40,23 @@
               <div id="danger"></div>
 
             </div>
-		</div>	
+		</div>
+    <div class="tab-pane fade" id="correlations">
+      <h2>About JavaScript tabs</h2>
+      <div>
+        <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.</p>
+        <p>The code is written in such a way that the page degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="deviation">
+      <h2>Advantages of tabs</h2>
+      <div>
+        <p>JavaScript tabs are great if your Web page contains a large amount of content.</p>
+        <p>They're also good for things like multi-step Web forms.</p>
+      </div>
+    </div>	
+    </div>
 </body>
 
 <script src="js/vendor/jquery.min.js"></script>
