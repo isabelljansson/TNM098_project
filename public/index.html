@@ -12,13 +12,17 @@
 </head>
 <body>
 
+  <ul id="tabs">
+    <li><a href="#about">About JavaScript tabs</a></li>
+    <li><a href="#advantages">Advantages of tabs</a></li>
+    <li><a href="#usage">Using tabs</a></li>
+  </ul>
+
 	<div class="container" ng-controller="mainCtrl">
 		<h1>GAStech Offices</h1>
 
-		<div id="center" class="col-md-6" style ="height: 80vh; width: 50vw">
-            <div id ="map" style ="height: 80vh; width: 62vw">
-            	<!-- <img src="images/floor1.jpg" alt="Plan of Floor 1" width="90%" height="90%"> -->
-            </div>
+		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 50vw">
+            <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
            		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
 

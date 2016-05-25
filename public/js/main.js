@@ -183,7 +183,7 @@ var plotList = [
 draw();
 
 //console.log(points);
-//console.log(foundPeople);
+//console.log(foundPeople1, foundPeople2, foundPeople3);
 //console.log(hazium);
 
 
@@ -201,8 +201,8 @@ function draw()
          .attr("y",0)
          .attr("xlink:href",imageList[currImg*3 + currView]);
 
-         // 1,89135255, 1.69
     //draw point        
+    var count = 0;
     var point = g.selectAll("circle").data(points)
         .enter().append("circle")
         .attr("d", path)
@@ -211,7 +211,8 @@ function draw()
         .attr("cy", function(d) { return (height - (d.coordinates[1]/maxY)*imH - offsetY); })
         .attr("r", 5)
         .style("opacity", function(d){
-                return (Number(d.floor) == currImg+1) ? 1 : 0.0
+                return (Number(d.floor) == currImg+1) ? 1. : 0.0
+                
             })
         .style("fill", function(d, i){ 
             if (cc[i] != undefined) 

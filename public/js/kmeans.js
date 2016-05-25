@@ -9,28 +9,28 @@
    var centroids = [];
    var EPSILON = 0.005;
    
-    function kmeans(data, k) {	
+    function kmeans(kdata, k) {	
     	// id, hazium, times
 		var iteration = 0;
 		var qualityDiff = 100000;
 
 		// 0. Convert data
-		data = convertData(data);
-		keys = d3.keys(data[0]);
+		kdata = convertData(kdata);
+		keys = d3.keys(kdata[0]);
 		
 		// 1. Randomise k positions
-		createCentroids(data, keys, k);
+		createCentroids(kdata, keys, k);
 		
 		do {
 			// 2. Assign item to closest centroid
-			data.forEach(function(d, i) { clusters[i] = assign(d, keys); });
+			kdata.forEach(function(d, i) { clusters[i] = assign(d, keys); });
 			
 			// 3. Reassign centroids
-			reassign(data);
+			reassign(kdata);
 			
 			// 4. Check quality
 			//console.log("Quality: " + qualityDiff);
-			var temp = qualityDifference(data);
+			var temp = qualityDifference(kdata);
 			if (qualityDiff - EPSILON > temp)
 				qualityDiff = temp;
 			else 
@@ -47,8 +47,8 @@
 			total.push({"hazium": 0, "times": 0, "id": j});
 			keys.forEach(function(p) { sum[p] = 0; });
 			var counter = 0;
-			// Go through all data and check if its assigned to clusters j
-			data.forEach(function(d, i) {
+			// Go through all kdata and check if its assigned to clusters j
+			kdata.forEach(function(d, i) {
 				if (clusters[i] == j) {
 					// Add up 'hazium' and 'times' coordinates to calculate avg value
 					keys.forEach(function(p) { sum[p] += Number(d[p]); });
@@ -80,26 +80,26 @@
 	    return ( element2.hazium * element2.times ) - ( element1.hazium * element1.times );
 	}
 	
-	function convertData(data) {
+	function convertData(kdata) {
 		var temp = [];
-		for (var i = 0; i < data.length; ++i) {
-			temp.push( { "hazium": data[i].hazium, "times": data[i].times } );
+		for (var i = 0; i < kdata.length; ++i) {
+			temp.push( { "hazium": kdata[i].hazium, "times": kdata[i].times } );
 		}
 		return temp;
 	}
 	
-	function createCentroids(data, keys, k) {
+	function createCentroids(kdata, keys, k) {
 		for(i = 0; i < k; i++)
-			centroids[i] = data[Math.floor(Math.random()*data.length)];
+			centroids[i] = kdata[Math.floor(Math.random()*kdata.length)];
 	}
 	
 	// Calculate the euclidian distance between dataItem and centroid
-	function assign(data, keys) {
+	function assign(kdata, keys) {
 		var dist = 10000;
 		var k = -1;
 		for (i = 0; i < centroids.length; i++) {
 			var sum = 0;
-			keys.forEach( function(d) { sum += Math.pow(Number(centroids[i][d]) - Number(data[d]),2); });
+			keys.forEach( function(d) { sum += Math.pow(Number(centroids[i][d]) - Number(kdata[d]),2); });
 			var distance = Math.sqrt(sum);
 			
 			if (dist > distance) {
@@ -110,14 +110,14 @@
 		return k; 
 	};
 	
-	function reassign(data) {
+	function reassign(kdata) {
 		// Go through all clusters
 		for(j = 0; j < centroids.length; j++) {
 			var sum = [];
 			keys.forEach(function(p) { sum[p] = 0; });
 			var counter = 0;
 			// Go through all data and check if its assigned to clusters j
-			data.forEach(function(d, i) {
+			kdata.forEach(function(d, i) {
 				if (clusters[i] == j) {
 					// Add up 'hazium' and 'times' coordinates to calculate avg value
 					keys.forEach(function(p) { sum[p] += Number(d[p]); });
@@ -132,10 +132,10 @@
 		}
 	};
 	
-	function qualityDifference(data) {
+	function qualityDifference(kdata) {
 		var sum = 0;
 		for(j = 0; j < centroids.length; j++) {	
-			data.forEach(function(d, i) {
+			kdata.forEach(function(d, i) {
 				if (clusters[i] == j) {
 					keys.forEach(function(p) { sum += Math.pow(Number(d[p]) - centroids[j][p], 2); });
 				}
