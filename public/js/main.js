@@ -58,13 +58,13 @@ function getSelected() {
     var val = e.options[e.selectedIndex].value;
     if(val.indexOf("Hazium") > -1) {
         var tempVal = val.split(' ');
-        devHazium(hazium, tempVal);
-    } else deviation(val.toString());
+        createTable(hazium, tempVal[1]);
+    } else getGeneralData(val.toString());
     
 }
 // data for general
 var genData = [];
-function deviation(selected) {
+function getGeneralData(selected) {
     console.log('sel: ' + selected);
     httpGetAsync('/getGeneral/'.concat(selected), function(response){
         for(var i = 0; i < response.length; i++) {
@@ -77,6 +77,8 @@ function deviation(selected) {
     });
     // Sort data by time
     genData.sort(sortArray);
+    createTable(genData, 'val');
+    /*
     // Calculate distribution and put it in a table
     $('#timetable').empty();
     var day = undefined;// = genData[0].datetime.getDate();
@@ -107,20 +109,21 @@ function deviation(selected) {
             row = 1;
         }
     }
+    */
 }
 
-function devHazium(arr, val) {
-    console.log('hej');
+function createTable(arr, val) {
+    console.log('hej', arr.length);
     // Calculate distribution and put it in a table
     $('#timetable').empty();
     var day = undefined;
     var table, row, r, c1, c2, vb, va;
-    var n = 4;
+    var n = 2;
     for(var i = 0; i < arr.length; i++) {
-        console.log(arr[i][val]);
         if(day === arr[i].datetime.getDate()) {
-            if(i < n || (variance(arr.slice(i-n,i)) >
-                variance(arr.slice(i-n+1,i+1)))) {
+            if(i < n || (variance(arr.slice(i-n,i), val) >
+                variance(arr.slice(i-n+1,i+1), val))) {
+                console.log('yaay');
                 // Insert row into table
                 r = table.insertRow(row);
                 c1 = r.insertCell(0);
@@ -144,14 +147,14 @@ function devHazium(arr, val) {
     }
 }
 
-function variance(X) {
+function variance(X, val) {
     var mean = 0, v = 0;
     for( var i = 0; i < X.length; i++) {
-       mean += parseFloat(X[i].val); 
+       mean += parseFloat(X[i][val]); 
     }
     mean /= X.length;
     for( var i = 0; i < X.length; i++) {
-        v += Math.pow(parseFloat(X[i].val - mean), 2);
+        v += Math.pow(parseFloat(X[i][val] - mean), 2);
     }
     v /= X.length - 1;
     //console.log('v: ' + v + ' Xlength: ' + X.length);
@@ -252,7 +255,6 @@ function sortArray(element1, element2) {
     return element1.datetime.getTime() - element2.datetime.getTime();
 }
 
-console.log(tmpF1Z8);
 tmpF1Z8.sort(sortArray);
 tmpF2Z2.sort(sortArray);
 tmpF2Z4.sort(sortArray);
@@ -265,7 +267,7 @@ for (var i = 0; i < tmpF1Z8.length; i++) {
 }
 //console.log(hazium)
 //create a new parallel coord plot
-var pc1 = new pc(hazium);
+//var pc1 = new pc(hazium);
 
 var currImg = 0;
 var currView = 0;

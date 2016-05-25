@@ -174,8 +174,10 @@ app.get('/getHaziumF2Z2', function (req, res) {
       function(err, cursor)
       {
         cursor.toArray(function(err, doc){
-          for(var i = 0; i < doc.length; i++)
+          for(var i = 0; i < doc.length; i++) {
+          	
               tmp.push({"datetime": doc[i].message.datetime, "F2Z2": doc[i].message.F_2_Z_2_HaziumConcentration});
+              }
             res.send(tmp);
         });
       });
