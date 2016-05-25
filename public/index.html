@@ -11,27 +11,43 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
 
+  <link rel="stylesheet" href="css/pc.css">
+
+  <!--modules css-->
   <title>Fear the Hazium</title>
 
 </head>
 <body onload="getSelected()">
 
+  <ul id="tabs">
+    <li><a href="#about">About JavaScript tabs</a></li>
+    <li><a href="#advantages">Advantages of tabs</a></li>
+    <li><a href="#usage">Using tabs</a></li>
+  </ul>
+
 	<div class="container" ng-controller="mainCtrl">
 		<h1>GAStech Offices</h1>
 
-		<div id="center" class="col-md-6" style ="height: 80vh; width: 50vw">
-    		<div id ="map" style ="height: 80vh; width: 62vw">
-            	<!-- <img src="images/floor1.jpg" alt="Plan of Floor 1" width="90%" height="90%"> -->
-            </div>
+		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 90vw">
+            <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
-           		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
+
+				<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
 
            		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
 
               	<button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
+              	<input id="k" type="number" min="2" max="9" step="1" value="2"/>
 
               	<div id="floor"></div>
-                <select id="devList" onchange="deviation(this);">
+
+
+              	<div id="danger"></div>
+              	<div id="pc" style="height: 80vh"></div>
+
+
+        </div>
+        <select id="devList" onchange="deviation(this);">
 					<option value="SupplySideOutletTemperature">Supply Side Outlet Temperature</option>
 					<option value="WaterHeaterGasRate">Water Heater Gas Rate</option>
 					<option value="DELI-FANPower">DELI-FAN Power</option>
@@ -45,11 +61,9 @@
 					<option value="Hazium F2Z2">Hazium F2Z2</option>
 					<option value="Hazium F2Z4">Hazium F2Z4</option>
 					<option value="Hazium F3Z1">Hazium F3Z1</option>
-                </select>
-			</div>
-            <div id="timetable"/></div>
-		</div>
-	</div>	
+        </select>
+    	<div id="timetable"/></div>
+	</div>
 </body>
 
 <script src="js/vendor/jquery.min.js"></script>
@@ -66,5 +80,7 @@
 
 <!-- module js -->
 <script src="js/kmeans.js"></script>
+<script src="js/pc.js"></script>
 <script src="js/main.js"></script>
+
 </html>
