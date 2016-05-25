@@ -7,6 +7,9 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="css/pc.css">
+
+  <!--modules css-->
   <title>Fear the Hazium</title>
 
 </head>
@@ -24,9 +27,11 @@
 
 	<div class="tab-content" ng-controller="mainCtrl">
 
+  <!-- Plot divs -->
 		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; width: 50vw">
             <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
+
            		<button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
 
            		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
@@ -36,21 +41,17 @@
               <input id="k" type="number" min="2" max="9" step="1" value="2"/>
 
               <div id="floor"></div>
-
               <div id="danger"></div>
-
             </div>
 		</div>
-    <div class="tab-pane fade" id="correlations">
-      <h2>About JavaScript tabs</h2>
-      <div>
-        <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.</p>
-        <p>The code is written in such a way that the page degrades gracefully in browsers that don't support JavaScript or CSS.</p>
-      </div>
+    <!-- Parallel coordinates divs -->
+    <div class="tabContent" class="tab-pane fade" id="correlations">
+      <h2>Correlations of HVAC data and Hazium</h2>
+      <div id="pc" style="height: 80vh"></div>
     </div>
-
-    <div class="tab-pane fade" id="deviation">
-      <h2>Advantages of tabs</h2>
+    <!-- Deviation divs -->
+    <div class="tabContent" class="tab-pane fade" id="deviation">
+      <h2>Deviation with PCA</h2>
       <div>
         <p>JavaScript tabs are great if your Web page contains a large amount of content.</p>
         <p>They're also good for things like multi-step Web forms.</p>
@@ -73,5 +74,7 @@
 
 <!-- module js -->
 <script src="js/kmeans.js"></script>
+<script src="js/pc.js"></script>
 <script src="js/main.js"></script>
+
 </html>

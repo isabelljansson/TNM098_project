@@ -1,4 +1,5 @@
 // Using JS for tabs *****
+
 var tabLinks = new Array();
 var contentDivs = new Array();
 
@@ -173,33 +174,44 @@ var tmpF2Z2 = [];
 var tmpF2Z4 = [];
 var tmpF3Z1 = [];
 
-    httpGetAsync('/getHaziumF1Z8', function(response){
-        for(var i = 0; i < response.length; i++)
-            tmpF1Z8.push({"datetime": format.parse(response[i].datetime), "F1Z8": response[i].F1Z8} );
-});
-    httpGetAsync('/getHaziumF2Z2', function(response){
-        for(var i = 0; i < response.length; i++)
-            tmpF2Z2.push({"datetime": format.parse(response[i].datetime), "F2Z2": response[i].F2Z2});
-});
-    httpGetAsync('/getHaziumF2Z4', function(response){
-        for(var i = 0; i < response.length; i++)
-            tmpF2Z4.push({"datetime": format.parse(response[i].datetime), "F2Z4": response[i].F2Z4});
-});
-    httpGetAsync('/getHaziumF3Z1', function(response){
-        for(var i = 0; i < response.length; i++)
-            tmpF3Z1.push({"datetime": format.parse(response[i].datetime), "F3Z1": response[i].F3Z1});
-});
-
-
 // Make one hazium list
+httpGetAsync('/getHaziumF1Z8', function(response){
+    for(var i = 0; i < response.length; i++)
+        tmpF1Z8.push({"datetime": format.parse(response[i].datetime), "F1Z8": response[i].F1Z8} );
+});
+httpGetAsync('/getHaziumF2Z2', function(response){
+    for(var i = 0; i < response.length; i++)
+        tmpF2Z2.push({"datetime": format.parse(response[i].datetime), "F2Z2": response[i].F2Z2});
+});
+httpGetAsync('/getHaziumF2Z4', function(response){
+    for(var i = 0; i < response.length; i++)
+        tmpF2Z4.push({"datetime": format.parse(response[i].datetime), "F2Z4": response[i].F2Z4});
+});
+httpGetAsync('/getHaziumF3Z1', function(response){
+    for(var i = 0; i < response.length; i++)
+        tmpF3Z1.push({"datetime": format.parse(response[i].datetime), "F3Z1": response[i].F3Z1});
+});
+
+
+// sort all list by time
+function sortArray(element1, element2) {
+    return element1.datetime.getTime() - element2.datetime.getTime();
+}
+
+
 tmpF1Z8.sort(sortArray);
 tmpF2Z2.sort(sortArray);
 tmpF2Z4.sort(sortArray);
 tmpF3Z1.sort(sortArray);
+
+
 for (var i = 0; i < tmpF1Z8.length; i++) {
     hazium.push({"datetime": tmpF1Z8[i].datetime, "F1Z8": tmpF1Z8[i].F1Z8,
                 "F2Z2": tmpF2Z2[i].F2Z2, "F2Z4": tmpF2Z4[i].F2Z4, "F3Z1": tmpF3Z1[i].F3Z1});
 }
+//console.log(hazium)
+//create a new parallel coord plot
+var pc1 = new pc(hazium);
 
 var currImg = 0;
 var currView = 0;
