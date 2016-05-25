@@ -5,15 +5,15 @@ svg {
 .background path {
     fill: none;
     stroke: #ccc;
-    stroke-opacity: .2;
+    stroke-opacity: .1;
     shape-rendering: crispEdges;
 }
 
 .foreground path {
     fill: none;
     stroke: steelblue;
-    stroke-opacity: .7;
-    stroke-width: 3px !important;
+    stroke-opacity: 0.1;
+    stroke-width: 2px !important;
 }
 
 .foreground path:hover{

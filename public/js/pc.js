@@ -45,11 +45,8 @@ function pc(hazium){
     self.data = [];
     httpGetAsync('/getGeneral', function(data){
     	
-    	
     	axisText = data[0];
-    	
     	axisText.push("hazium");
-    	console.log(axisText)
     	
     	//remove the first item from data (containing the field names) to be able to sort
     	//sort the array depending on the time so it can be merged with the hazium array
@@ -60,25 +57,17 @@ function pc(hazium){
     	{
     		self.data.push([format.parse(data[i][0]), //datetime
     						Number(data[i][1]), 	  //SupplySideOutletTemperature
-    						//Number(data[i][2]),		  //SupplySideInletMassFlowRate
     						Number(data[i][2]),		  //HVACElectricDemandPower
-    						//Number(data[i][4]),		  //PumpPower
     						Number(data[i][3]),		  //WaterHeaterTankTemperature
     						Number(data[i][4]),		  //SupplySideInletTemperature
     						Number(data[i][5]),		  //WindDirection
     						Number(data[i][6]),		  //TotalElectricDemandPower
     						Number(data[i][7]),		  //DrybulbTemperature
     						Number(data[i][8]),		  //WindSpeed
-    						(Number(hazium[i].F1Z8) + Number(hazium[i].F2Z2) + Number(hazium[i].F2Z4) + Number(hazium[i].F3Z1))/4]); //hazium  
-    		
+    						(Number(hazium[i].F1Z8) + Number(hazium[i].F2Z2) 
+    					   + Number(hazium[i].F2Z4) + Number(hazium[i].F3Z1))/4]); //hazium  		
     	}
 
-    	
-
-    	//console.log(self.data)
-    	
-
-    	//console.log(self.data)
         // Extract the list of dimensions and create a scale for each.
 	    x.domain(dimensions = d3.keys(self.data[0]).filter(function(d) {
             return d != 0 && (y[d] = d3.scale.linear()
@@ -107,7 +96,10 @@ function pc(hazium){
     		.selectAll("path")
      		.data(self.data)
     		.enter().append("path")
-      		.attr("d", path);
+      		.attr("d", path)
+      		.style("opacity", function(d){
+      			return d+1.0/self.data.length;
+      		})
             
 
 		// Add a group element for each dimension.

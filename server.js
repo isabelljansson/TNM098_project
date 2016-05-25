@@ -78,10 +78,7 @@ app.get('/getGeneral', function (req, res) {
     { },
     { 'message.datetime': 1, 
       'message.SupplySideOutletTemperature': 1, 
-      //'message.DELI-FANPower': 1, 
-      //'message.SupplySideInletMassFlowRate': 1, 
       'message.HVACElectricDemandPower': 1, 
-      //'message.PumpPower': 1, 
       'message.WaterHeaterTankTemperature': 1, 
       'message.SupplySideInletTemperature': 1,   
       'message.WindDirection': 1, 
@@ -92,26 +89,20 @@ app.get('/getGeneral', function (req, res) {
     function(err, cursor)
     {
       cursor.toArray(function(err, doc){
-        //console.log(doc[0].message.X)
-        tmp.push(["datetime", "SupplySideOutletTemperature",// "DELI-FANPower",
-        //"SupplySideInletMassFlowRate", 
-        "HVACElectricDemandPower", //"PumpPower",
+        tmp.push(["datetime", "SupplySideOutletTemperature",
+        "HVACElectricDemandPower", 
         "WaterHeaterTankTemperature", "SupplySideInletTemperature", "WindDirection", 
         "TotalElectricDemandPower", "DrybulbTemperature", "WindSpeed"]);
         for(var i = 0; i < doc.length; i++)
             tmp.push([doc[i].message.datetime,
-                      doc[i].message.SupplySideOutletTemperature, 
-                     // doc[i].message.DELI-FANPower,  
-                      //doc[i].message.SupplySideInletMassFlowRate, 
+                      doc[i].message.SupplySideOutletTemperature,  
                       doc[i].message.HVACElectricDemandPower, 
-                      //doc[i].message.PumpPower, 
                       doc[i].message.WaterHeaterTankTemperature,  
                       doc[i].message.SupplySideInletTemperature, 
                       doc[i].message.WindDirection,
                       doc[i].message.TotalElectricDemandPower,
                       doc[i].message.DrybulbTemperature, 
                       doc[i].message.WindSpeed ]);
-        //console.log(tmp)
         res.send(tmp);
       });
   });
