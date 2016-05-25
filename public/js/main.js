@@ -10,9 +10,6 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 
-//create a new parallel coord plot
-var pc1 = new pc();
-
 var kmeansArray = [];
 var cc = [];
 var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S");
@@ -115,7 +112,8 @@ for (var i = 0; i < tmpF1Z8.length; i++) {
                 "F2Z2": tmpF2Z2[i].F2Z2, "F2Z4": tmpF2Z4[i].F2Z4, "F3Z1": tmpF3Z1[i].F3Z1});
 }
 //console.log(hazium)
-
+//create a new parallel coord plot
+var pc1 = new pc(hazium);
 
 var currImg = 0;
 var currView = 0;

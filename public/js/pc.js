@@ -11,8 +11,9 @@ function httpGetAsync(theUrl, callback)
 }
 
 
-function pc(){
+function pc(hazium){
 	console.log('create pc')
+	
 	var format = d3.time.format.utc("%Y-%m-%dT%H:%M:%S");
 
 	var self = this; // for internal d3 functions
@@ -39,14 +40,22 @@ function pc(){
         .append("svg:g")
         .attr("transform", "translate(" + margin[3] + "," + margin[0] + ")");
 
+
     //get the data
     self.data = [];
     httpGetAsync('/getGeneral', function(data){
     	
     	
     	axisText = data[0];
+    	
+    	axisText.push("hazium");
     	console.log(axisText)
-    	//d3.set(["datetime", "wind", "tankTemperature"]).values(self.data);
+    	
+    	//remove the first item from data (containing the field names) to be able to sort
+    	//sort the array depending on the time so it can be merged with the hazium array
+    	data.splice(0,1);
+    	data.sort(sortArray);
+
     	for(var i = 1; i < data.length; i++)
     	{
     		self.data.push([format.parse(data[i][0]), //datetime
@@ -59,10 +68,16 @@ function pc(){
     						Number(data[i][5]),		  //WindDirection
     						Number(data[i][6]),		  //TotalElectricDemandPower
     						Number(data[i][7]),		  //DrybulbTemperature
-    						Number(data[i][8])]);	  //WindSpeed
+    						Number(data[i][8]),		  //WindSpeed
+    						(Number(hazium[i].F1Z8) + Number(hazium[i].F2Z2) + Number(hazium[i].F2Z4) + Number(hazium[i].F3Z1))/4]); //hazium  
     		
     	}
+
     	
+
+    	//console.log(self.data)
+    	
+
     	//console.log(self.data)
         // Extract the list of dimensions and create a scale for each.
 	    x.domain(dimensions = d3.keys(self.data[0]).filter(function(d) {
@@ -149,6 +164,11 @@ function pc(){
             .attr("width", 16);
 
     }
+
+	// sort all list by time
+	function sortArray(element1, element2) {
+	    return format.parse(element1[0]).getTime() - format.parse(element2[0]).getTime();
+	}
 
     function position(d) {
 		var v = dragging[d];
