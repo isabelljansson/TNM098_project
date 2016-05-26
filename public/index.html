@@ -17,18 +17,23 @@
   <title>Fear the Hazium</title>
 
 </head>
-<body onload="getSelected()">
+<body onload="init()">
 
-  <ul id="tabs">
-    <li><a href="#about">About JavaScript tabs</a></li>
-    <li><a href="#advantages">Advantages of tabs</a></li>
-    <li><a href="#usage">Using tabs</a></li>
-  </ul>
 
-	<div class="container" ng-controller="mainCtrl">
-		<h1>GAStech Offices</h1>
+  <div class="container" ng-controller="mainCtrl">
+  <h1>GASTech Visual Data Analysis</h1>
 
-		<div class="tabContent" id="plot" class="col-md-6" style ="height: 80vh; width: 90vw">
+    <ul id="tabs" class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#plot">Map</a></li>
+      <li><a data-toggle="tab" href="#correlations">Correlations</a></li>
+      <li><a data-toggle="tab" href="#deviation">Deviation</a></li>
+    </ul>
+
+	<div class="tab-content" ng-controller="mainCtrl">
+
+  <!-- Plot divs -->
+		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; width: 50vw">
+            <h2>Visualize employees at risk of Hazium</h2>
             <div id ="map" style ="height: 80vh; width: 62vw"></div>
             <div id ="rest" style ="height: 80vh; width: 62vw">
 
@@ -36,34 +41,44 @@
 
            		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
 
-              	<button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
-              	<input id="k" type="number" min="2" max="9" step="1" value="2"/>
+              <button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
 
-              	<div id="floor"></div>
+              <input id="k" type="number" min="2" max="9" step="1" value="6"/>
 
-
-              	<div id="danger"></div>
-              	<div id="pc" style="height: 80vh"></div>
-
-
-        </div>
-        <select id="devList" onchange="getSelected(this);">
-					<option value="SupplySideOutletTemperature">Supply Side Outlet Temperature</option>
-					<option value="WaterHeaterGasRate">Water Heater Gas Rate</option>
-					<option value="DELI-FANPower">DELI-FAN Power</option>
-					<option value="HVACElectricDemandPower">HVAC Electric Demand Power</option>
-					<option value="WaterHeaterTankTemperature">Water Heater Tank Temperature</option>
-					<option value="SupplySideInletTemperature">Supply Side Inlet Temperature</option>
-					<option value="WindDirection">Wind Direction</option>
-					<option value="TotalElectricDemandPower">Total Electric Demand Power</option>
-					<option value="DrybulbTemperature">Drybulb Temperature</option>
-					<option value="Hazium F1Z8">Hazium F1Z8</option>
-					<option value="Hazium F2Z2">Hazium F2Z2</option>
-					<option value="Hazium F2Z4">Hazium F2Z4</option>
-					<option value="Hazium F3Z1">Hazium F3Z1</option>
-        </select>
-    	<div id="timetable"/></div>
-	</div>
+              <div id="floor"></div>
+              <div id="danger"></div>
+            </div>
+		</div>
+    <!-- Parallel coordinates divs -->
+    <div class="tabContent" class="tab-pane fade" id="correlations">
+      <h2>Correlations of HVAC data and Hazium</h2>
+      <div id="pc" style="height: 80vh"></div>
+    </div>
+    <!-- Deviation divs -->
+    <div class="tabContent" class="tab-pane fade" id="deviation">
+		<h2>Deviation with PCA</h2>
+		<div>
+			<p>JavaScript tabs are great if your Web page contains a large amount of content.</p>
+			<p>They're also good for things like multi-step Web forms.</p>
+		</div>
+		<select id="devList" onchange="getSelected(this);">
+			<option value="SupplySideOutletTemperature">Supply Side Outlet Temperature</option>
+			<option value="WaterHeaterGasRate">Water Heater Gas Rate</option>
+			<option value="DELI-FANPower">DELI-FAN Power</option>
+			<option value="HVACElectricDemandPower">HVAC Electric Demand Power</option>
+			<option value="WaterHeaterTankTemperature">Water Heater Tank Temperature</option>
+			<option value="SupplySideInletTemperature">Supply Side Inlet Temperature</option>
+			<option value="WindDirection">Wind Direction</option>
+			<option value="TotalElectricDemandPower">Total Electric Demand Power</option>
+			<option value="DrybulbTemperature">Drybulb Temperature</option>
+			<option value="Hazium F1Z8">Hazium F1Z8</option>
+			<option value="Hazium F2Z2">Hazium F2Z2</option>
+			<option value="Hazium F2Z4">Hazium F2Z4</option>
+			<option value="Hazium F3Z1">Hazium F3Z1</option>
+		</select>
+		<div id="timetable"/></div>
+    </div>	
+    </div>
 </body>
 
 <script src="js/vendor/jquery.min.js"></script>
