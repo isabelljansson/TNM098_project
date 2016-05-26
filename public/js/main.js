@@ -36,6 +36,7 @@ function init() {
   // Get tables
   getSelected();
 }
+
 function showTab() {
   var selectedId = getHash( this.getAttribute('href') );
 
@@ -54,6 +55,7 @@ function showTab() {
   // Stop the browser following the link
   return false;
 }
+
 function getFirstChildWithTagName( element, tagName ) {
   for ( var i = 0; i < element.childNodes.length; i++ ) {
     if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
@@ -121,109 +123,6 @@ var projection = d3.geo.mercator()
 
 //Creates a new geographic path generator and assing the projection        
 var path = d3.geo.path().projection(projection);
-
-// Get selected value from list and process it
-function getSelected() {
-    var e = document.getElementById('devList');
-    var val = e.options[e.selectedIndex].value;
-    if(val.indexOf("Hazium") > -1) {
-        var tempVal = val.split(' ');
-        createTable(hazium, tempVal[1]);
-    } else getGeneralData(val.toString());
-    
-}
-// Fetch data for general
-var genData = [];
-function getGeneralData(selected) {
-    httpGetAsync('/getGeneral/'.concat(selected), function(response){
-        for(var i = 0; i < response.length; i++) {
-                genData.push({"datetime": format.parse(response[i].datetime),
-                "val":response[i].val});
-        }
-    });
-    // Sort data by time
-    genData.sort(sortArray);
-    createTable(genData, 'val');
-}
-
-// Fill table with data
-function createTable(arr, val) {
-    // Calculate distribution and put it in a table
-    $('#timetable').empty();
-    var day = undefined;
-    var table, row, r, c1, c2, vb, va;
-    var n = 2;
-    for(var i = 0; i < arr.length; i++) {
-        if(day === arr[i].datetime.getDate()) {
-            if(i < n || (variance(arr.slice(i-n,i), val) >
-                variance(arr.slice(i-n+1,i+1), val))) {
-                // Insert row into table
-                r = table.insertRow(row);
-                c1 = r.insertCell(0);
-                c2 = r.insertCell(1);
-                c1.innerHTML = getTime(arr[i].datetime);
-                c2.innerHTML = ''.concat(arr[i][val]);
-                row++;
-            }
-        } else {
-            // Create a table for every day
-            var table = document.createElement('table');
-            document.getElementById('timetable').appendChild(table);
-            day = arr[i].datetime.getDate();
-            r = table.insertRow(0);
-            c1 = r.insertCell(0);
-            //c2 = r.insertCell(1);
-            c1.innerHTML = arr[i].datetime.toDateString();
-            row = 1;
-        }
-    }
-}
-
-// Calculate variance
-function variance(X, val) {
-    var mean = 0, v = 0;
-    for( var i = 0; i < X.length; i++) {
-       mean += parseFloat(X[i][val]); 
-    }
-    mean /= X.length;
-    for( var i = 0; i < X.length; i++) {
-        v += Math.pow(parseFloat(X[i][val] - mean), 2);
-    }
-    v /= X.length - 1;
-    return v;
-}
-    
-function getTime(time) {
-    var hour = time.getHours();
-    var minute = time.getMinutes();
-    hour < 10 ? hour = '0' + hour : hour; 
-    minute < 10 ? minute = '0' + minute : minute; 
-    return hour + ':' + minute;
-}
-    
-// data for zone clustering
-var zoneData = [];
-httpGetAsync('/getProxOut', function(response){
-    for(var i = 0; i < response.length; i++)
-            zoneData.push(response[i]);
-});
-
-// sort all list by time
-function sortArray(element1, element2) {
-    return element1.datetime.getTime() - element2.datetime.getTime();
-}
-// sort list by clusters
-function sortbyClusters(element1, element2) {
-    return element1.clusters - element2.clusters;
-}
-
-function find(array, id) {
-    for(var i=0;i<array.length;i++) {
-        if (array[i].id == id)
-            return i;
-    }
-    return -1;
-}
 
 // data for plotted points
 var points = [];
@@ -300,6 +199,111 @@ for (var i = 0; i < tmpF1Z8.length; i++) {
 //console.log(hazium)
 //create a new parallel coord plot
 var pc1 = new pc(hazium);
+
+// DEVIATION
+
+// Get selected value from list and process it
+function getSelected() {
+    var e = document.getElementById('devList');
+    var val = e.options[e.selectedIndex].value;
+    if(val.indexOf("Hazium") > -1) {
+        var tempVal = val.split(' ');
+        createTable(hazium, tempVal[1]);
+    } else getGeneralData(val.toString());
+    
+}
+// Fetch data for general
+var genData = [];
+function getGeneralData(selected) {
+    httpGetAsync('/getGeneral/'.concat(selected), function(response){
+        for(var i = 0; i < response.length; i++) {
+                genData.push({"datetime": format.parse(response[i].datetime),
+                "val":response[i].val});
+        }
+    });
+    // Sort data by time
+    genData.sort(sortArray);
+    // Create table
+    createTable(genData, 'val');
+}
+
+// Fill table with data
+function createTable(arr, val) {
+    // Calculate distribution and put it in a table
+    $('#timetable').empty();
+    var day = undefined, n = 2, tableNr = 0, table = undefined;
+    var atRow, row, col1, col2;
+
+    for(var i = 0; i < arr.length; i++) {
+        if(day === arr[i].datetime.getDate()) {
+            if(i < n || (variance(arr.slice(i-n,i), val) >
+                variance(arr.slice(i-n+1,i+1), val))) {
+                // Insert row into table
+                row = table.insertRow(atRow);
+                col1 = row.insertCell(0);
+                col2 = row.insertCell(1);
+                col1.innerHTML = getTime(arr[i].datetime);
+                col2.innerHTML = arr[i][val];
+                atRow++;
+            }
+        } else {
+            // Remove empty tables
+            if (table && (atRow < 2 || (tableNr === 1 && atRow < n + 1))) {
+                table.remove();
+            }
+            // Create a table for every day
+            var table = document.createElement('table');
+            document.getElementById('timetable').appendChild(table);
+            day = arr[i].datetime.getDate();
+            row = table.insertRow(0);
+            col1 = row.insertCell(0);
+            //col2 = row.insertCell(1);
+            col1.innerHTML = arr[i].datetime.toDateString();
+            atRow = 1;
+            tableNr++;
+        }
+    }
+}
+
+// Calculate variance
+function variance(X, val) {
+    var mean = 0, v = 0;
+    for( var i = 0; i < X.length; i++) {
+       mean += parseFloat(X[i][val]); 
+    }
+    mean /= X.length;
+    for( var i = 0; i < X.length; i++) {
+        v += Math.pow(parseFloat(X[i][val] - mean), 2);
+    }
+    v /= X.length - 1;
+    return v;
+}
+    
+// Format time
+function getTime(time) {
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    hour < 10 ? hour = '0' + hour : hour; 
+    minute < 10 ? minute = '0' + minute : minute; 
+    return hour + ':' + minute;
+}
+
+// sort all list by time
+function sortArray(element1, element2) {
+    return element1.datetime.getTime() - element2.datetime.getTime();
+}
+// sort list by clusters
+function sortbyClusters(element1, element2) {
+    return element1.clusters - element2.clusters;
+}
+
+function find(array, id) {
+    for(var i=0;i<array.length;i++) {
+        if (array[i].id == id)
+            return i;
+    }
+    return -1;
+}
 
 var currImg = 0;
 var currView = 0;
