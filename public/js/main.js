@@ -32,6 +32,9 @@ function init() {
     if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
     i++;
   }
+
+  // Get tables
+  getSelected();
 }
 function showTab() {
   var selectedId = getHash( this.getAttribute('href') );
@@ -119,6 +122,7 @@ var projection = d3.geo.mercator()
 //Creates a new geographic path generator and assing the projection        
 var path = d3.geo.path().projection(projection);
 
+// Get selected value from list and process it
 function getSelected() {
     var e = document.getElementById('devList');
     var val = e.options[e.selectedIndex].value;
@@ -128,58 +132,22 @@ function getSelected() {
     } else getGeneralData(val.toString());
     
 }
-// data for general
+// Fetch data for general
 var genData = [];
 function getGeneralData(selected) {
-    console.log('sel: ' + selected);
     httpGetAsync('/getGeneral/'.concat(selected), function(response){
         for(var i = 0; i < response.length; i++) {
                 genData.push({"datetime": format.parse(response[i].datetime),
                 "val":response[i].val});
-                //mean += parseFloat(response[i].val);
         }
-        //mean /= parseFloat(response.length);
-        //console.log('mean: ' + mean + 'resp: ' + response.length);
     });
     // Sort data by time
     genData.sort(sortArray);
     createTable(genData, 'val');
-    /*
-    // Calculate distribution and put it in a table
-    $('#timetable').empty();
-    var day = undefined;// = genData[0].datetime.getDate();
-    var table, row, r, c1, c2, vb, va;
-    var n = 4;
-    for(var i = 0; i < genData.length; i++) {
-        if(day === genData[i].datetime.getDate()) {
-            if(i < n || (variance(genData.slice(i-n,i)) >
-                variance(genData.slice(i-n+1,i+1)))) {
-                // Insert row into table
-                r = table.insertRow(row);
-                c1 = r.insertCell(0);
-                c2 = r.insertCell(1);
-                c1.innerHTML = getTime(genData[i].datetime);
-                c2.innerHTML = ''.concat(genData[i].val);
-                //c.innerHTML = mean - parseFloat(genData[i].val);
-                row++;
-            }
-        } else {
-            // Create a table for every day
-            var table = document.createElement('table');
-            document.getElementById('timetable').appendChild(table);
-            day = genData[i].datetime.getDate();
-            r = table.insertRow(0);
-            c1 = r.insertCell(0);
-            //c2 = r.insertCell(1);
-            c1.innerHTML = genData[i].datetime.toDateString();
-            row = 1;
-        }
-    }
-    */
 }
 
+// Fill table with data
 function createTable(arr, val) {
-    console.log('hej', arr.length);
     // Calculate distribution and put it in a table
     $('#timetable').empty();
     var day = undefined;
@@ -189,14 +157,12 @@ function createTable(arr, val) {
         if(day === arr[i].datetime.getDate()) {
             if(i < n || (variance(arr.slice(i-n,i), val) >
                 variance(arr.slice(i-n+1,i+1), val))) {
-                console.log('yaay');
                 // Insert row into table
                 r = table.insertRow(row);
                 c1 = r.insertCell(0);
                 c2 = r.insertCell(1);
                 c1.innerHTML = getTime(arr[i].datetime);
                 c2.innerHTML = ''.concat(arr[i][val]);
-                //c.innerHTML = mean - parseFloat(arr[i].val);
                 row++;
             }
         } else {
@@ -213,6 +179,7 @@ function createTable(arr, val) {
     }
 }
 
+// Calculate variance
 function variance(X, val) {
     var mean = 0, v = 0;
     for( var i = 0; i < X.length; i++) {
@@ -223,7 +190,6 @@ function variance(X, val) {
         v += Math.pow(parseFloat(X[i][val] - mean), 2);
     }
     v /= X.length - 1;
-    //console.log('v: ' + v + ' Xlength: ' + X.length);
     return v;
 }
     
