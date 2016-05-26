@@ -26,24 +26,22 @@
       <li><a data-toggle="tab" href="#correlations">Correlations</a></li>
       <li><a data-toggle="tab" href="#deviation">Deviation</a></li>
     </ul>
-
-	  <div class="tab-content" ng-controller="mainCtrl">
+  </div>
+	<div class="tab-content">
 
     <!-- Plot divs -->
-	  <div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; width: 50vw">
-      <h2>Visualize employees at risk of Hazium</h2>
-      <div id ="map" style ="height: 80vh; width: 62vw"></div>
-      
-      <div id ="rest" style ="height: 80vh; width: 62vw">
-			  <button class="pure-button pure-button-primary" onclick="changeFloor()" type="button" style="margin-top: 5px; float: left;">Change Floor</button>
-     		<button class="pure-button pure-button-primary" onclick="toggleView()" type="button" style="margin-top: 5px; float: left;">Toggle view</button>
-     		<button class="pure-button pure-button-primary" onclick="cluster()" type="button" style="margin-top: 5px; float: left;">Find doomed people</button>
-     		<input id="k" type="number" min="2" max="9" step="1" value="6"/>
-        <div id="floor"></div>
+		<div class="tabContent" id="plot" class="tab-pane fade in active" style ="height: 80vh; ">
+      <div id="floor" style ="margin-top: 2%; width: 100%;""></div>
+      <div id ="map" style =" position: relative; height: 60%; width: 70%; margin: 0; display: inline-block;"></div>
+      <div id ="rest" style ="height: 60%; width: 30%; float: right; display: inline-block;">
+     		<button type="button" class="btn btn-default"  onclick="changeFloor()" type="button" style="margin-top: 5px; ">Change Floor</button>
+     		<button type="button" class="btn btn-default" onclick="toggleView()" type="button" style="margin-top: 5px; ">Toggle view</button>
+        <button type="button" class="btn btn-default" onclick="cluster()" type="button" style="margin-top: 5px; ">Find doomed people</button>
+        <input id="k" type="number" min="2" max="9" step="1" value="6" style="width: 15%; height: 8%; padding-top: 1%"/>
         <div id="danger"></div>
       </div>
-	  </div>
-	
+		</div>
+		
     <!-- Parallel coordinates divs -->
     <div class="tabContent" class="tab-pane fade" id="correlations">
       <h2>Correlations of HVAC data and Hazium</h2>
