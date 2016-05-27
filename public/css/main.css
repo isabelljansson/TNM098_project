@@ -1,18 +1,15 @@
 table {
-    //width:90%;
-    border-top:1px solid #e5eff8;
-    border-right:1px solid #e5eff8;
-    margin:1em auto;
-    border-collapse:collapse;
-    padding: 1em;
+    margin-right: 14px;
+    margin-top: 10px;
     float: left;
 }
 td {
-    color:#678197;
-    border-bottom:1px solid #e5eff8;
-    border-left:1px solid #e5eff8;
-    padding:.3em 1em;
-    text-align:center;
+    border:3px solid #ccc;
+    padding: .3em 1em;
+    text-align: center;
+}
+tbody tr:nth-child(odd) {
+    background-color: #ccc;
 }
 
 html,body {

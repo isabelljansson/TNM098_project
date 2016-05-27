@@ -257,8 +257,9 @@ function createTable(arr, val) {
             day = arr[i].datetime.getDate();
             row = table.insertRow(0);
             col1 = row.insertCell(0);
-            //col2 = row.insertCell(1);
+            col2 = row.insertCell(1);
             col1.innerHTML = arr[i].datetime.toDateString();
+            col2.innerHTML = 'Value';
             atRow = 1;
             tableNr++;
         }
