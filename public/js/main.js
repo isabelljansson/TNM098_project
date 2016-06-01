@@ -208,7 +208,10 @@ function getSelected() {
     var val = e.options[e.selectedIndex].value;
     if(val.indexOf("Hazium") > -1) {
         var tempVal = val.split(' ');
-        createTable(hazium, tempVal[1]);
+        $('#timetable').empty();
+        setTimeout(function(){
+            createTable(hazium, tempVal[1]);
+        }, 3)
     } else getGeneralData(val.toString());
     
 }
@@ -224,13 +227,15 @@ function getGeneralData(selected) {
     // Sort data by time
     genData.sort(sortArray);
     // Create table
-    createTable(genData, 'val');
+    $('#timetable').empty();
+    setTimeout(function(){
+        createTable(genData, 'val');
+    }, 3)
 }
 
 // Fill table with data
 function createTable(arr, val) {
     // Calculate distribution and put it in a table
-    $('#timetable').empty();
     var day = undefined, n = 2, tableNr = 0, table = undefined;
     var atRow, row, col1, col2;
 
