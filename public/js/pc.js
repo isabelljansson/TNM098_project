@@ -46,7 +46,7 @@ function pc(hazium){
     httpGetAsync('/getGeneral', function(data){
     	
     	axisText = data[0];
-    	axisText.push("hazium");
+    	axisText.push("Hazium");
     	
     	//remove the first item from data (containing the field names) to be able to sort
     	//sort the array depending on the time so it can be merged with the hazium array
